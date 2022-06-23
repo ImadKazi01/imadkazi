@@ -9,7 +9,7 @@ function App() {
           <img src={logo} className="mb-3" width={250} alt="logo" />
           <p className='text-sm text-slate-600 uppercase font-medium'>Designer | Developer | Photographer</p>
         </div>
-        <h3 className='text-slate-900'>
+        <h3 className='text-slate-900 font-normal'>
           Website in development
         </h3>
         <h4 className='text-slate-900 font-medium text-center px-5 my-2'>
