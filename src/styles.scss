@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Arboria';
+  src: url("https://use.typekit.net/xiv8sym.css");
+}
+body {
+  font-family: 'Arboria', sans-serif;
+}
+.text {
+    &__role {
+      font-size: 16px;
+    }
+
+    &__email {
+      font-size: 22px;
+    }
+    
+}
+.App {
+    text-align: center;
+  }
+  
+  .logo {
+    height: 40px;
+    pointer-events: none;
+  }
+  
+  .App-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+  }
+  
+  
