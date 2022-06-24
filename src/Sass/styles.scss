@@ -1,3 +1,4 @@
+@import "./var.scss";
 @font-face {
   font-family: 'Arboria';
   src: url("https://use.typekit.net/xiv8sym.css");
@@ -27,4 +28,18 @@ div {
     font-size: calc(10px + 2vmin);
   }
   
+.active {
+  color: $white !important;
+  background-color: $orange;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+
+  @media (max-width: $mobile) {
+    color: $orange !important;
+    border-bottom: 4px solid;
+    padding: 0.75rem !important;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
   
