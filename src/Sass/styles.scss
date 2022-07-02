@@ -42,4 +42,14 @@ div {
     border-radius: 0;
   }
 }
+.bg {
+  background-image: url(../Assets/parallax.png);
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: $mobile) {
+    background-position: 25%;
+  }
+}
+
   
