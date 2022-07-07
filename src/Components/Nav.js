@@ -12,13 +12,16 @@ export const Nav = () => {
         <nav className="fixed top-0 z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 bg-zinc-50">
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                <div className='flex justify-center items-center'>
-                    <img
-                    src={logo}
-                    className="w-[40px] py-2 font-bold leading-relaxed inline-block mr-4 whitespace-nowrap uppercase text-white"
-                    alt='logo'
-                    >
-                    </img>
+                <div className='flex justify-center items-center m-0'>
+                    <a href='/'>
+                        <img
+                        src={logo}
+                        className="w-[40px] py-2 font-bold leading-relaxed inline-block mr-4 whitespace-nowrap uppercase text-white m-0"
+                        alt='logo'
+                        >
+                        </img>
+                    </a>
+                    
                 </div>
                 
                 <button

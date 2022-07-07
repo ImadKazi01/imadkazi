@@ -43,13 +43,23 @@ div {
   }
 }
 .bg {
-  background-image: url(../Assets/parallax.png);
+  background-image: url(../Assets/parallax-1.png);
   background-position: center;
   background-size: cover;
 
   @media (max-width: $mobile) {
-    background-position: 25%;
+    background-position: 40%;
   }
 }
 
+.tb {
+  min-height: 500px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (max-width: $mobile) {
+    min-height: 370px !important;
+  }
+}
   
