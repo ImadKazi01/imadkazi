@@ -9,8 +9,8 @@ const toggleMenu = () => {
 
 const props = defineProps({
   backgroundColor: {
-    type: Object,
-  },
+    type: Object
+  }
 })
 </script>
 
@@ -23,7 +23,11 @@ const props = defineProps({
     <div class="navbar__btn">
       <span @click="toggleMenu">MENU</span>
     </div>
-    <div class="navbar__menu" :style="{backgroundColor: props.backgroundColor}" :class="showMenu ? 'navbar__menu--active' : ''">
+    <div
+      class="navbar__menu"
+      :style="{ backgroundColor: props.backgroundColor }"
+      :class="showMenu ? 'navbar__menu--active' : ''"
+    >
       <span @click="toggleMenu" class="navbar__btn navbar__btn-close">CLOSE</span>
       <ul class="navbar__menu-links-container">
         <li class="navbar__menu-title">MENU</li>
@@ -45,7 +49,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-@import '../../scss/rescources.scss';
+@import '../../scss/global.scss';
 
 @mixin tr {
   transition: all 0.4s ease-in-out;
@@ -56,21 +60,42 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  background: #181818;
+  color: whitesmoke;
+  padding: 1rem 2rem;
+
+  @media (min-width: 768px) {
+    max-width: 1440px;
+  }
+
   &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     font-family: $font-family;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 1rem;
     text-transform: uppercase;
+    line-height: 1;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 1rem;
+    }
   }
+
   &__btn {
     cursor: pointer;
     letter-spacing: 5px;
     font-family: $font-family;
     font-weight: bold;
-    font-size: 1.4rem;
-    letter-spacing: 1rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.6rem;
+
+    @media (min-width: 768px) {
+      letter-spacing: 1rem;
+    }
 
     &:hover {
       color: $orange;
@@ -85,10 +110,16 @@ const props = defineProps({
 
     &-close {
       position: fixed;
-      top: 3.4rem;
-      right: 3rem;
-      font-size: 1.4rem !important;
-      letter-spacing: 1rem;
+      top: 2rem;
+      right: 1rem;
+      font-size: 1.6rem !important;
+      letter-spacing: 0.6 rem;
+
+      @media (min-width: 768px) {
+        top: 3.4rem;
+        right: 3rem;
+        letter-spacing: 1rem;
+      }
     }
   }
 
@@ -123,27 +154,39 @@ const props = defineProps({
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 10rem;
+      padding: 2rem;
       align-items: flex-start;
       gap: 1.5rem;
       width: 100%;
       height: 100vh;
 
+      @media (min-width: 768px) {
+        padding: 7rem;
+      }
+
       a {
         width: 100%;
         height: 400px;
         font-family: $font-family;
-        font-size: 4rem;
+        font-size: 2.5rem;
         letter-spacing: 1rem;
         text-decoration: none;
         color: whitesmoke;
         @include tr;
         position: relative;
 
+        @media (min-width: 768px) {
+          font-size: 4rem;
+        }
+
         &:hover {
           color: $orange;
-          font-size: 4.5rem;
+          font-size: 3.2rem;
           margin-left: 10px;
+
+          @media (min-width: 768px) {
+            font-size: 4.2rem;
+          }
         }
 
         &:before {
