@@ -56,6 +56,17 @@ const props = defineProps({
   //transition-delay: .2s;
 }
 
+@keyframes navAnimate {
+  from {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -63,6 +74,8 @@ const props = defineProps({
   background: #181818;
   color: whitesmoke;
   padding: 1rem 2rem;
+  animation: navAnimate 0.5s ease-in-out;
+  animation-fill-mode: backwards;
 
   @media (min-width: 768px) {
     max-width: 1440px;
@@ -124,12 +137,11 @@ const props = defineProps({
   }
 
   &__menu {
-    @include tr;
     z-index: 1111;
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba($color: #151515, $alpha: 0.98);
+    background: rgba($color: #151515, $alpha: 0.99);
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -138,6 +150,7 @@ const props = defineProps({
     flex-direction: column;
     justify-content: center;
     transform: translateX(-200rem);
+    transition: all 1s ease-in-out;
     span {
       color: white;
       font-family: $font-family;
@@ -156,7 +169,7 @@ const props = defineProps({
       justify-content: center;
       padding: 2rem;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 0.7rem;
       width: 100%;
       height: 100vh;
 
@@ -176,7 +189,7 @@ const props = defineProps({
         position: relative;
 
         @media (min-width: 768px) {
-          font-size: 4rem;
+          font-size: 4.5rem;
         }
 
         &:hover {
@@ -185,7 +198,7 @@ const props = defineProps({
           margin-left: 10px;
 
           @media (min-width: 768px) {
-            font-size: 4.2rem;
+            font-size: 5.5rem;
           }
         }
 

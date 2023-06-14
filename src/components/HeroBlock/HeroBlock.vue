@@ -5,12 +5,36 @@
       <h1>Hi, I'm Imad</h1>
       <p>A designer, developer & photography based in Huddersfield.</p>
     </div>
-    <img class='hero__img' src="../../assets/memoji.png" alt="Hero Image" />
+    <div class="hero__img">
+      <img src="../../assets/memoji.png" alt="Hero Image" />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '../../scss/global.scss';
+
+@keyframes contentAnimate {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageAnimate {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .hero {
   display: flex;
@@ -22,12 +46,12 @@
   font-family: $font-family;
   color: $white;
   background: $black;
-  padding: 7rem 2rem;
+  padding: 7rem 2rem 3rem;
 
   @media (min-width: 768px) {
     flex-direction: row;
-    gap: 6rem;
-    padding: 13rem 0;
+    gap: 10rem;
+    padding: 12rem 0 5rem;
   }
 
   &__img {
@@ -35,12 +59,25 @@
     max-width: 250px;
     height: auto;
     background: $orange;
-    outline: solid 0.45rem $white;
+    border: solid 0.45rem $white;
     border-radius: 50%;
-    
+    animation: imageAnimate 0.5s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+
+    @media (min-width: 768px) {
+     animation-delay: 1s;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
     @media (min-width: 768px) {
       max-width: 400px;
-      outline: solid 0.6rem $white;
+      border: solid 0.6rem $white;
     }
   }
 
@@ -48,10 +85,16 @@
     color: $white;
     font-weight: bold;
     text-align: center;
+    animation: contentAnimate 0.5s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+
     @media (min-width: 768px) {
       max-width: 900px;
       text-align: left;
+      animation-delay: 0.5s;
     }
+
     h1 {
       font-size: 3.3rem;
       margin-top: -20px;
