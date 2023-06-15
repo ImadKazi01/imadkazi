@@ -78,7 +78,7 @@ const props = defineProps({
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   font-family: $font-family;
   color: $white;
   background: $black;
