@@ -7,14 +7,14 @@ body {
 #app {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 1rem;
 
-  @media (min-width: 768px) {
-    padding: 2rem 0;
+  @media (min-width: $tablet) {
+    padding: 2rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $desktopSmall) {
   body {
     display: flex;
   }

@@ -1,9 +1,26 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  buttonStyle: {
+    type: String,
+    default: 'primary'
+  }
+})
+</script>
 <template>
   <div class="hero">
     <div class="hero__content">
       <h1>Hi, I'm Imad</h1>
       <p>A designer, developer & photography based in Huddersfield.</p>
+      <a
+        href=""
+        class="btn"
+        :class="{
+          'btn-primary': props.buttonStyle === 'primary',
+          'btn-secondary': props.buttonStyle === 'secondary',
+          '' : props.buttonStyle === ''
+        }"
+        >Get in touch !</a
+      >
     </div>
     <div class="hero__img">
       <img src="../../assets/memoji.png" alt="Hero Image" />
@@ -17,7 +34,7 @@
 @keyframes contentAnimate {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -28,7 +45,7 @@
 @keyframes imageAnimate {
   from {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;
@@ -41,17 +58,22 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 1rem;
   width: 100%;
+  height: 80vh;
   font-family: $font-family;
   color: $white;
   background: $black;
-  padding: 7rem 2rem 3rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: $tablet) {
+    gap: 3rem;
+    height: 85vh;
+  }
+
+  @media (min-width: $desktopSmall) {
     flex-direction: row;
-    gap: 10rem;
-    padding: 12rem 0 5rem;
+    gap: 8rem;
+    height: 75vh;
   }
 
   &__img {
@@ -65,8 +87,8 @@
     animation-delay: 0.5s;
     animation-fill-mode: backwards;
 
-    @media (min-width: 768px) {
-     animation-delay: 1s;
+    @media (min-width: $desktopSmall) {
+      animation-delay: 1s;
     }
 
     img {
@@ -82,34 +104,49 @@
   }
 
   &__content {
+    display: block;
+    flex-direction: column;
     color: $white;
     font-weight: bold;
     text-align: center;
     animation: contentAnimate 0.5s ease-in-out;
     animation-delay: 1s;
     animation-fill-mode: backwards;
+    padding: 1rem;
 
-    @media (min-width: 768px) {
-      max-width: 900px;
+    @media (min-width: $desktopSmall) {
       text-align: left;
       animation-delay: 0.5s;
     }
 
     h1 {
-      font-size: 3.3rem;
-      margin-top: -20px;
-      @media (min-width: 768px) {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+
+      @media (min-width: $tablet) {
+        font-size: 5.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (min-width: $desktopSmall) {
         font-size: 8.5rem;
-        max-width: 10em;
-        letter-spacing: -0.03em;
-        margin: 0;
+        letter-spacing: 0.03rem;
       }
     }
+
     p {
       font-size: 1.5rem;
       max-width: 24em;
-      line-height: 1.45;
+      line-height: 1.2;
       font-weight: normal;
+      margin-bottom: 3rem;
+
+      @media (min-width: $tablet) {
+        font-size: 2rem;
+        padding: 0;
+        letter-spacing: 0.1rem;
+      }
     }
   }
 }

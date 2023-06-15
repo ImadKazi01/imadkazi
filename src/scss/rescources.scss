@@ -4,8 +4,68 @@
 $font-family: 'arboria', sans-serif;
 
 // Colors
-
 $orange: #fb923c;
 $white: #ededed;
+$teal: #2ea4a2;
 $dark-blue: #0f172a;
 $black: #181818;
+
+// Breakpoints
+$phone: 320px !default;
+$iphone: 375px !default;
+$iphone-plus: 414px !default;
+$tablet: 768px !default;
+$desktopSmall: 1024px !default;
+$desktop: 1440px !default;
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1px solid $white;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: $white;
+  font-family: $font-family;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  transition: all 0.2s ease-in-out;
+
+    @media (min-width: $tablet) {
+        font-size: 1.5rem;
+    }
+
+  @media (min-width: $desktopSmall) {
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+
+  &-primary {
+    background-color: transparent;
+    border-color: $orange;
+    color: $white;
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    border-color: $teal;
+    color: $white;
+
+    &:hover {
+      background-color: $teal;
+      color: $white;
+    }
+  }
+}

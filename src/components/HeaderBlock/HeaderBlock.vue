@@ -77,7 +77,7 @@ const props = defineProps({
   animation: navAnimate 0.5s ease-in-out;
   animation-fill-mode: backwards;
 
-  @media (min-width: 768px) {
+  @media (min-width: $tablet) {
     max-width: 1440px;
   }
 
@@ -92,7 +92,7 @@ const props = defineProps({
     text-transform: uppercase;
     line-height: 1;
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet) {
       flex-direction: row;
       gap: 1rem;
     }
@@ -106,7 +106,7 @@ const props = defineProps({
     font-size: 1.6rem;
     letter-spacing: 0.6rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet) {
       letter-spacing: 1rem;
     }
 
@@ -128,7 +128,7 @@ const props = defineProps({
       font-size: 1.6rem !important;
       letter-spacing: 0.6 rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: $tablet) {
         top: 3.4rem;
         right: 3rem;
         letter-spacing: 1rem;
@@ -173,7 +173,7 @@ const props = defineProps({
       width: 100%;
       height: 100vh;
 
-      @media (min-width: 768px) {
+      @media (min-width: $tablet) {
         padding: 7rem;
       }
 
@@ -188,7 +188,7 @@ const props = defineProps({
         @include tr;
         position: relative;
 
-        @media (min-width: 768px) {
+        @media (min-width: $tablet) {
           font-size: 4.5rem;
         }
 
@@ -197,7 +197,7 @@ const props = defineProps({
           font-size: 3.2rem;
           margin-left: 10px;
 
-          @media (min-width: 768px) {
+          @media (min-width: $tablet) {
             font-size: 5.5rem;
           }
         }
