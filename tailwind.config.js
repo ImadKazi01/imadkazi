@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-export const purge = [];
 export const content = ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'];
 export const theme = {
   extend: {},
