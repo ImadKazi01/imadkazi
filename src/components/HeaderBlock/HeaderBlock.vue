@@ -16,10 +16,10 @@ const props = defineProps({
 
 <template>
   <nav class="navbar">
-    <div class="navbar__logo">
+    <a href='/' class="navbar__logo">
       <span>Imad</span>
       <span>Kazi</span>
-    </div>
+    </a>
     <div class="navbar__btn">
       <span @click="toggleMenu">MENU</span>
     </div>
@@ -32,20 +32,21 @@ const props = defineProps({
       <ul class="navbar__menu-links-container">
         <li class="navbar__menu-title">MENU</li>
         <li>
-          <a href="" class="home">HOME</a>
+          <a href="/">HOME</a>
         </li>
         <li>
-          <a href="" class="places">WORK</a>
+          <a href="">WORK</a>
         </li>
         <li>
-          <a href="" class="about">ABOUT</a>
+          <a href="/about">ABOUT</a>
         </li>
         <li>
-          <a href="" class="contact">CONTACT</a>
+          <a href="">CONTACT</a>
         </li>
       </ul>
     </div>
   </nav>
+
 </template>
 
 <style lang="scss" scoped>
@@ -72,12 +73,13 @@ const props = defineProps({
   align-items: center;
   justify-content: space-between;
   background: #181818;
-  color: whitesmoke;
+  color: $white;
   padding: 1rem 2rem;
   animation: navAnimate 0.5s ease-in-out;
   animation-fill-mode: backwards;
+  width: 100%;
 
-  @media (min-width: $tablet) {
+  @media (min-width: 768px) {
     max-width: 1440px;
   }
 
@@ -91,8 +93,9 @@ const props = defineProps({
     letter-spacing: 1rem;
     text-transform: uppercase;
     line-height: 1;
+    text-decoration: none;
 
-    @media (min-width: $tablet) {
+    @media (min-width: 768px) {
       flex-direction: row;
       gap: 1rem;
     }
@@ -106,7 +109,7 @@ const props = defineProps({
     font-size: 1.6rem;
     letter-spacing: 0.6rem;
 
-    @media (min-width: $tablet) {
+    @media (min-width: 768px) {
       letter-spacing: 1rem;
     }
 
@@ -128,7 +131,7 @@ const props = defineProps({
       font-size: 1.6rem !important;
       letter-spacing: 0.6 rem;
 
-      @media (min-width: $tablet) {
+      @media (min-width: 768px) {
         top: 3.4rem;
         right: 3rem;
         letter-spacing: 1rem;
@@ -173,7 +176,7 @@ const props = defineProps({
       width: 100%;
       height: 100vh;
 
-      @media (min-width: $tablet) {
+      @media (min-width: 768px) {
         padding: 7rem;
       }
 
@@ -188,7 +191,7 @@ const props = defineProps({
         @include tr;
         position: relative;
 
-        @media (min-width: $tablet) {
+        @media (min-width: 768px) {
           font-size: 4.5rem;
         }
 
@@ -197,7 +200,7 @@ const props = defineProps({
           font-size: 3.2rem;
           margin-left: 10px;
 
-          @media (min-width: $tablet) {
+          @media (min-width: 768px) {
             font-size: 5.5rem;
           }
         }

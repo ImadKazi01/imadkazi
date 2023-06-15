@@ -4,12 +4,15 @@
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<style lang="scss" scoped>
+@import '../scss/global.scss';
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  font-size: 3rem;
+  color: $white;
 }
 </style>
