@@ -1,25 +1,43 @@
 <script setup>
+import data from '../../data/hero.json'
+
 const props = defineProps({
   buttonStyle: {
     type: String,
     default: 'primary'
+  },
+  title: {
+    type: String,
+    default: () => data.title
+  },
+  copy: {
+    type: String,
+    default: () => data.copy
+  },
+  ctaLink: {
+    type: String,
+    default: () => data.ctaLink
+  },
+  ctaText: {
+    type: String,
+    default: () => data.ctaText
   }
 })
 </script>
 <template>
   <div class="hero">
     <div class="hero__content">
-      <h1>Hi, I'm Imad</h1>
-      <p>A designer, developer & photography based in Huddersfield.</p>
+      <h1>{{ title }}</h1>
+      <p>{{ copy }}</p>
       <a
-        href=""
+        :href="ctaLink"
         class="btn"
         :class="{
           'btn-primary': props.buttonStyle === 'primary',
           'btn-secondary': props.buttonStyle === 'secondary',
-          '' : props.buttonStyle === ''
+          '': props.buttonStyle === ''
         }"
-        >Get in touch !</a
+        >{{ ctaText }}</a
       >
     </div>
     <div class="hero__img">
