@@ -138,7 +138,7 @@ const props = defineProps({
     }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       line-height: 1;
       margin-bottom: 1rem;
 
@@ -148,22 +148,22 @@ const props = defineProps({
       }
 
       @media (min-width: $desktopSmall) {
-        font-size: 8.5rem;
+        font-size: 8rem;
         letter-spacing: 0.03rem;
       }
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       max-width: 24em;
       line-height: 1.2;
       font-weight: normal;
       margin-bottom: 3rem;
 
       @media (min-width: $tablet) {
-        font-size: 2rem;
+        font-size: 1.7rem;
         padding: 0;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.02rem;
       }
     }
   }
