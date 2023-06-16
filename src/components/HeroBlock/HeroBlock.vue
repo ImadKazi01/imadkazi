@@ -94,10 +94,6 @@ const props = defineProps({
     height: 75vh;
   }
 
-  @media (min-width: $desktop) {
-    font-size: 8rem;
-  }
-
   &__img {
     width: 100%;
     max-width: 250px;
@@ -152,8 +148,12 @@ const props = defineProps({
       }
 
       @media (min-width: $desktopSmall) {
-        font-size: 8rem;
+        font-size: 7rem;
         letter-spacing: 0.03rem;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 8rem;
       }
     }
 
