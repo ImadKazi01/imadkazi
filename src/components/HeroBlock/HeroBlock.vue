@@ -148,7 +148,7 @@ const props = defineProps({
       }
 
       @media (min-width: $desktopSmall) {
-        font-size: 7rem;
+        font-size: 6rem;
         letter-spacing: 0.03rem;
       }
 
