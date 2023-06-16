@@ -90,7 +90,7 @@ const props = defineProps({
 
   @media (min-width: $desktopSmall) {
     flex-direction: row;
-    gap: 8rem;
+    gap: 6rem;
     height: 75vh;
   }
 
@@ -143,13 +143,17 @@ const props = defineProps({
       margin-bottom: 1rem;
 
       @media (min-width: $tablet) {
-        font-size: 5.5rem;
+        font-size: 4.5rem;
         margin-bottom: 2rem;
       }
 
       @media (min-width: $desktopSmall) {
-        font-size: 8rem;
+        font-size: 6rem;
         letter-spacing: 0.03rem;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 8rem;
       }
     }
 
