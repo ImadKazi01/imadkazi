@@ -153,7 +153,8 @@ const props = defineProps({
     flex-direction: column;
     justify-content: center;
     transform: translateX(calc(-100vw));
-    transition: all 1s ease-in-out;
+    @include tr;
+
     span {
       color: white;
       font-family: $font-family;

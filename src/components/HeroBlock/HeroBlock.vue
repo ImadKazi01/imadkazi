@@ -151,10 +151,6 @@ const props = defineProps({
         font-size: 6rem;
         letter-spacing: 0.03rem;
       }
-
-      @media (min-width: $desktop) {
-        font-size: 8rem;
-      }
     }
 
     p {
@@ -168,6 +164,11 @@ const props = defineProps({
         font-size: 1.7rem;
         padding: 0;
         letter-spacing: 0.02rem;
+      }
+
+      @media (min-width: $desktopSmall) {
+        padding: 0;
+        letter-spacing: -0.03rem;
       }
     }
   }
