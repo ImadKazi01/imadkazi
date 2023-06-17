@@ -55,7 +55,7 @@ const props = defineProps({
 @keyframes navAnimate {
   from {
     opacity: 0;
-    transform: translateY(-5rem);
+    transform: translateY(calc(-10vh));
   }
   to {
     opacity: 1;
