@@ -55,7 +55,7 @@ const props = defineProps({
 @keyframes navAnimate {
   from {
     opacity: 0;
-    transform: translateY(-10rem);
+    transform: translateY(-5rem);
   }
   to {
     opacity: 1;
@@ -180,7 +180,8 @@ const props = defineProps({
         width: 100%;
         height: 400px;
         font-family: $font-family;
-        font-size: 2.5rem;
+        font-size: 3rem;
+        line-height: 1;
         letter-spacing: 1rem;
         text-decoration: none;
         color: whitesmoke;
