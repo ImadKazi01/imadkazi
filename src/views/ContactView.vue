@@ -1,14 +1,13 @@
 <script setup></script>
 
 <template>
-  <div class="about">About</div>
+  <div class="contact">Contact</div>
 </template>
-
 
 <style lang="scss" scoped>
 @import '../scss/global.scss';
 
-.about {
+.contact {
   display: flex;
   justify-content: center;
   align-items: center;

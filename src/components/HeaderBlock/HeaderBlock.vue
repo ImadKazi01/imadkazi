@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import data from '@/data/routes'
 
 const showMenu = ref(false)
 
@@ -10,13 +11,17 @@ const toggleMenu = () => {
 const props = defineProps({
   backgroundColor: {
     type: Object
+  },
+  routes: {
+    type: Array,
+    default: () => data
   }
 })
 </script>
 
 <template>
   <nav class="navbar">
-    <a href='/' class="navbar__logo">
+    <a href="/" class="navbar__logo">
       <span>Imad</span>
       <span>Kazi</span>
     </a>
@@ -31,22 +36,12 @@ const props = defineProps({
       <span @click="toggleMenu" class="navbar__btn navbar__btn-close">CLOSE</span>
       <ul class="navbar__menu-links-container">
         <li class="navbar__menu-title">MENU</li>
-        <li>
-          <a href="/">HOME</a>
-        </li>
-        <li>
-          <a href="">WORK</a>
-        </li>
-        <li>
-          <a href="/about">ABOUT</a>
-        </li>
-        <li>
-          <a href="">CONTACT</a>
+        <li v-for="route in routes" :key="route.name">
+          <a :href="route.url">{{ route.title }}</a>
         </li>
       </ul>
     </div>
   </nav>
-
 </template>
 
 <style lang="scss" scoped>

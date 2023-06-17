@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Home",
+    "component": "HomeView",
+    "url": "/"
+  },
+  {
+    "title": "Work",
+    "component": "WorkView",
+    "url": "/work"
+  },
+  {
+    "title": "About",
+    "component": "AboutView",
+    "url": "/about"
+  },
+  {
+    "title": "Contact",
+    "component": "ContactView",
+    "url": "/contact"
+  }
+]
