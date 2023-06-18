@@ -115,6 +115,10 @@ onMounted(() => {
       margin-bottom: 2rem;
     }
 
+    @media (min-width: $desktopSmall) {
+      gap: 5rem;
+    }
+
     /* Hide the scrollbar */
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
@@ -143,7 +147,7 @@ onMounted(() => {
     transition: color 0.3s;
 
     @media (min-width: $desktopSmall) {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
 
     &:after {
