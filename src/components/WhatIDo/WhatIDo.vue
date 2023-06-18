@@ -116,7 +116,7 @@ onMounted(() => {
     }
 
     @media (min-width: $desktopSmall) {
-      gap: 5rem;
+      gap: 4rem;
     }
 
     /* Hide the scrollbar */
