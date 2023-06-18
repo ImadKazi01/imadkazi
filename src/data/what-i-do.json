@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Development",
+    "content": "Frontend development using HTML5, CSS3, and JavaScript. Proficient in Vue.js and React to create dynamic Single Page Applications (SPAs) with API integration. Also experienced in webflow development.",
+    "image": "https://picsum.photos/seed/picsum/300/300"
+  },
+  {
+    "title": "Design",
+    "content": "Offering a range of design services including logo creation, full branding, and brand identity development for clients. Skilled in print design for various purposes such as wedding invitations, banners, posters, and flyers.",
+    "image": "https://picsum.photos/seed/picsum/300/300"
+  },
+  {
+    "title": "Photography",
+    "content": "Specializing in commercial photography, including product and food photography. Experienced in capturing memorable moments at events such as birthdays and weddings.",
+    "image": "https://picsum.photos/seed/picsum/300/300"
+  }
+]

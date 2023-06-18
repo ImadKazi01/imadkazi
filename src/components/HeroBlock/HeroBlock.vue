@@ -128,7 +128,7 @@ const props = defineProps({
     font-weight: bold;
     text-align: center;
     animation: contentAnimate 0.5s ease-in-out;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
     animation-fill-mode: backwards;
     padding: 1rem;
 
