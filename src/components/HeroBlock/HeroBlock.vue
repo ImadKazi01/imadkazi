@@ -115,7 +115,7 @@ const props = defineProps({
       border-radius: 50%;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet) {
       max-width: 400px;
       border: solid 0.6rem $white;
     }
