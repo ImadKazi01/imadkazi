@@ -12,6 +12,14 @@ const props = defineProps({
 const componentRef = ref(null)
 const activeTab = ref(0)
 
+const getServiceLink = (service) => {
+  return `/services/${encodeURIComponent(service.title)}`
+}
+
+const getServiceButtonText = (service) => {
+  return `Explore ${service.title}`
+}
+
 onMounted(() => {
   const options = {
     root: null,
@@ -57,6 +65,7 @@ onMounted(() => {
         <div class="what-i-do__content-item-text">
           <h2>{{ tab.title }}</h2>
           <p>{{ tab.content }}</p>
+          <a :href="getServiceLink(tab)" class="btn btn-primary">{{ getServiceButtonText(tab) }}</a>
         </div>
         <div class="what-i-do__content-item-icon">
           <img :src="tab.image" alt="What I Do" />
@@ -79,8 +88,6 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
-
-
 
 .what-i-do {
   display: flex;
@@ -143,6 +150,7 @@ onMounted(() => {
     padding: 0.2rem;
     cursor: pointer;
     font-size: 1.5rem;
+    text-transform: capitalize;
     color: rgba($white, 0.7);
     transition: color 0.3s;
 
@@ -180,14 +188,21 @@ onMounted(() => {
     &-icon {
       margin-bottom: 1rem;
       width: 100%;
+      max-width: 300px;
 
       @media (min-width: $tablet) {
         margin-bottom: 0;
+        max-width: 400px;
       }
+      
       img {
         width: 100%;
         height: auto;
         animation: imageAnimate 0.5s ease-in-out;
+        background: $white;
+        border: solid 0.5rem $orange;
+        border-radius: 50%;
+
       }
     }
 
@@ -199,6 +214,7 @@ onMounted(() => {
 
       @media (min-width: $desktopSmall) {
         max-width: 60%;
+        gap: 2rem;
       }
 
       h2 {
@@ -225,6 +241,7 @@ onMounted(() => {
           font-size: 1.6rem;
           line-height: 1.2;
           width: 80%;
+          margin: 0.5rem 0;
         }
       }
     }

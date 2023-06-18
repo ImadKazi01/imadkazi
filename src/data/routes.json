@@ -7,16 +7,34 @@
   {
     "title": "Work",
     "component": "WorkView",
-    "url": "/work"
+    "url": "/work",
+    "meta": {
+      "title": "Work",
+      "link": "/work",
+      "description": "This is the work page",
+      "keywords": ["work", "portfolio", "projects", "clients"]
+    }
   },
   {
     "title": "About",
     "component": "AboutView",
-    "url": "/about"
+    "url": "/about",
+    "meta": {
+      "title": "About",
+      "link": "/about",
+      "description": "This is the about page",
+      "keywords": ["about", "me", "bio", "information"]
+    }
   },
   {
     "title": "Contact",
     "component": "ContactView",
-    "url": "/contact"
+    "url": "/contact",
+    "meta": {
+      "title": "Contact",
+      "link": "/contact",
+      "description": "This is the contact page",
+      "keywords": ["contact", "email", "phone", "address"]
+    }
   }
 ]
