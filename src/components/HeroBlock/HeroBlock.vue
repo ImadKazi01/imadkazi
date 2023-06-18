@@ -41,7 +41,7 @@ const props = defineProps({
       >
     </div>
     <div class="hero__img">
-      <img src="../../assets/memoji.png" alt="Hero Image" />
+      <img src="https://res.cloudinary.com/dwxqawplh/image/upload/v1687121297/memoji_s5q4kj.png" alt="Hero Image" />
     </div>
   </div>
 </template>

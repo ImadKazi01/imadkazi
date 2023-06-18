@@ -2,16 +2,16 @@
   {
     "title": "design",
     "content": "Offering a range of design services including logo creation, full branding, and brand identity development for clients. Skilled in print design for various purposes such as wedding invitations, banners, posters, and flyers.",
-    "image": "/assets/memoji_design.png"
+    "image": "https://res.cloudinary.com/dwxqawplh/image/upload/v1687121141/memoji_design_zefpx2.png"
   },
   {
     "title": "development",
     "content": "Frontend development using HTML5, CSS3, and JavaScript. Proficient in Vue.js and React to create dynamic Single Page Applications (SPAs) with API integration. Also experienced in webflow development.",
-    "image": "/assets/memoji_development.png"
+    "image": "https://res.cloudinary.com/dwxqawplh/image/upload/v1687121141/memoji_development_qjlcku.png"
   },
   {
     "title": "photography",
     "content": "Specializing in commercial photography, including product and food photography. Experienced in capturing memorable moments at events such as birthdays and weddings.",
-    "image": "/assets/memoji_photography.png"
+    "image": "https://res.cloudinary.com/dwxqawplh/image/upload/v1687121141/memoji_photography_wozojy.png"
   }
 ]
