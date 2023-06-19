@@ -2,12 +2,12 @@
   {
     "title": "Home",
     "component": "HomeView",
-    "url": "/"
+    "path": "/"
   },
   {
     "title": "Work",
     "component": "WorkView",
-    "url": "/work",
+    "path": "/work",
     "meta": {
       "title": "Work",
       "link": "/work",
@@ -18,7 +18,7 @@
   {
     "title": "About",
     "component": "AboutView",
-    "url": "/about",
+    "path": "/about",
     "meta": {
       "title": "About",
       "link": "/about",
@@ -29,7 +29,7 @@
   {
     "title": "Contact",
     "component": "ContactView",
-    "url": "/contact",
+    "path": "/contact",
     "meta": {
       "title": "Contact",
       "link": "/contact",

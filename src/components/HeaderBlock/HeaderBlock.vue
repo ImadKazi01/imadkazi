@@ -37,7 +37,7 @@ const props = defineProps({
       <ul class="navbar__menu-links-container">
         <li class="navbar__menu-title">MENU</li>
         <li v-for="route in routes" :key="route.name">
-          <a :href="route.url">{{ route.title }}</a>
+          <a :href="route.path">{{ route.title }}</a>
         </li>
       </ul>
     </div>

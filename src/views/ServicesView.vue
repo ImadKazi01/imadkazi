@@ -11,6 +11,8 @@ const pageTitle = computed(() => (route.meta.title || 'Default Title').toLowerCa
 const filteredService = computed(() => {
   return serviceData.find(service => service.title === pageTitle.value) || {};
 });
+
+console.log(filteredService.value);
 </script>
 
 

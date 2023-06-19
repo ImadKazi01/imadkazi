@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Burgerize",
+    "desc": "Full branding including, stickers, signs and packaging. Web design and setup of square website and photography for menu, website and social media.",
+    "img": "burgerize.jpg",
+    "link": "https://www.burgerizeonline.com/",
+    "services": ["Branding", "Web Design", "Photography"]
+  },
+  {
+    "title": "CleverBee Tuition",
+    "desc": "Full brand identity including logo, logo mark typography, colour palette, print materia. Web development using webflow integrating various 3rd party plugins for calnedar, 1-to-1 booking and chat service.",
+    "img": "cleverbee.jpg",
+    "link": "https://www.cleverbee.org.uk/",
+    "services": ["Branding", "Web Design", "Web Development"]
+  }
+]

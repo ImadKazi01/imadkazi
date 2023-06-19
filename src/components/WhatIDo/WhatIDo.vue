@@ -1,23 +1,12 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import data from '../../data/what-i-do.json'
-import serviceData from '../../data/service.json'
+import data from '../../data/service.json'
 
 const props = defineProps({
   services: {
     type: Array,
     default: () => {
       return data
-        .map((item) => {
-          const service = serviceData.find((service) => service.serviceId === item.serviceId)
-          if (service) {
-            return {
-              ...service,
-              serviceId: item.serviceId
-            }
-          }
-        })
-        .filter(Boolean)
     }
   }
 })
