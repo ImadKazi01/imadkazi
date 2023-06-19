@@ -1,16 +1,30 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import data from '../../data/what-i-do.json'
+import serviceData from '../../data/service.json'
 
 const props = defineProps({
   services: {
     type: Array,
-    default: () => data
+    default: () => {
+      return data
+        .map((item) => {
+          const service = serviceData.find((service) => service.serviceId === item.serviceId)
+          if (service) {
+            return {
+              ...service,
+              serviceId: item.serviceId
+            }
+          }
+        })
+        .filter(Boolean)
+    }
   }
 })
 
 const componentRef = ref(null)
 const activeTab = ref(0)
+const tabInterval = ref(null)
 
 const getServiceLink = (service) => {
   return `/services/${encodeURIComponent(service.title)}`
@@ -20,7 +34,13 @@ const getServiceButtonText = (service) => {
   return `Explore ${service.title}`
 }
 
+const switchToNextTab = () => {
+  activeTab.value = (activeTab.value + 1) % props.services.length
+}
+
 onMounted(() => {
+  tabInterval.value = setInterval(switchToNextTab, 5000)
+
   const options = {
     root: null,
     rootMargin: '0px',
@@ -39,6 +59,10 @@ onMounted(() => {
 
   observer.observe(componentRef.value)
 })
+
+onUnmounted(() => {
+  clearInterval(tabInterval.value)
+})
 </script>
 
 <template>
@@ -46,7 +70,7 @@ onMounted(() => {
     <div class="what-i-do__buttons">
       <button
         v-for="(tab, index) in props.services"
-        :key="index"
+        :key="tab.serviceId"
         :class="{ active: activeTab === index }"
         @click="activeTab = index"
       >
@@ -57,14 +81,14 @@ onMounted(() => {
     <div class="what-i-do__content">
       <div
         v-for="(tab, index) in props.services"
-        :key="index"
+        :key="tab.serviceId"
         :class="{ active: activeTab === index }"
         v-show="activeTab === index"
         class="what-i-do__content-item"
       >
         <div class="what-i-do__content-item-text">
           <h2>{{ tab.title }}</h2>
-          <p>{{ tab.content }}</p>
+          <p>{{ tab.desc }}</p>
           <a :href="getServiceLink(tab)" class="btn btn-primary">{{ getServiceButtonText(tab) }}</a>
         </div>
         <div class="what-i-do__content-item-icon">
@@ -194,7 +218,7 @@ onMounted(() => {
         margin-bottom: 0;
         max-width: 400px;
       }
-      
+
       img {
         width: 100%;
         height: auto;
@@ -202,7 +226,6 @@ onMounted(() => {
         background: $white;
         border: solid 0.5rem $orange;
         border-radius: 50%;
-
       }
     }
 
