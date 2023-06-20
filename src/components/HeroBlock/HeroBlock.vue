@@ -21,6 +21,10 @@ const props = defineProps({
   ctaText: {
     type: String,
     default: () => data.ctaText
+  },
+  image: {
+    type: String,
+    default: () => data.image
   }
 })
 </script>
@@ -41,7 +45,7 @@ const props = defineProps({
       >
     </div>
     <div class="hero__img">
-      <img src="https://res.cloudinary.com/dwxqawplh/image/upload/v1687121297/memoji_s5q4kj.png" alt="Hero Image" />
+      <img src="../images/memoji.png" alt="Hero Image" />
     </div>
   </div>
 </template>
