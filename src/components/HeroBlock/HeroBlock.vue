@@ -45,7 +45,7 @@ const props = defineProps({
       >
     </div>
     <div class="hero__img">
-      <img src="../images/memoji.png" alt="Hero Image" />
+      <img :src="image" alt="Hero Image" />
     </div>
   </div>
 </template>
