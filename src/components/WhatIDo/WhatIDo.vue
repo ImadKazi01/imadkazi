@@ -1,6 +1,11 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Pagination } from 'swiper/modules'
 import data from '../../data/service.json'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const props = defineProps({
   services: {
@@ -12,24 +17,28 @@ const props = defineProps({
 })
 
 const componentRef = ref(null)
-const activeTab = ref(0)
-const tabInterval = ref(null)
 
-const getServiceLink = (service) => {
-  return `/services/${encodeURIComponent(service.title)}`
+const getServiceLink = (services) => {
+  return `/services/${encodeURIComponent(services.title)}`
 }
 
-const getServiceButtonText = (service) => {
-  return `Explore ${service.title}`
+const getServiceButtonText = (services) => {
+  return `Explore ${services.title}`
 }
 
-const switchToNextTab = () => {
-  activeTab.value = (activeTab.value + 1) % props.services.length
+const swiperConfig = {
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    clickable: true
+  },
+  modules: [Autoplay, Pagination],
+  slidesPerView: 1
 }
 
 onMounted(() => {
-  tabInterval.value = setInterval(switchToNextTab, 5000)
-
   const options = {
     root: null,
     rootMargin: '0px',
@@ -48,43 +57,26 @@ onMounted(() => {
 
   observer.observe(componentRef.value)
 })
-
-onUnmounted(() => {
-  clearInterval(tabInterval.value)
-})
 </script>
 
 <template>
   <div class="what-i-do" ref="componentRef">
-    <div class="what-i-do__buttons">
-      <button
-        v-for="(tab, index) in props.services"
-        :key="tab.serviceId"
-        :class="{ active: activeTab === index }"
-        @click="activeTab = index"
-      >
-        {{ tab.title }}
-      </button>
-    </div>
-
-    <div class="what-i-do__content">
-      <div
-        v-for="(tab, index) in props.services"
-        :key="tab.serviceId"
-        :class="{ active: activeTab === index }"
-        v-show="activeTab === index"
-        class="what-i-do__content-item"
-      >
-        <div class="what-i-do__content-item-text">
-          <h2>{{ tab.title }}</h2>
-          <p>{{ tab.desc }}</p>
-          <a :href="getServiceLink(tab)" class="btn btn-primary">{{ getServiceButtonText(tab) }}</a>
+    <Swiper class="what-i-do__swiper" v-bind="swiperConfig">
+      <SwiperSlide class="what-i-do__swiper-slide" v-for="slide in props.services" :key="slide.id">
+        <div class="what-i-do__content">
+          <div class="what-i-do__content-item-text">
+            <h2>{{ slide.title }}</h2>
+            <p>{{ slide.desc }}</p>
+            <a :href="getServiceLink(slide)" class="btn btn-primary">{{
+              getServiceButtonText(slide)
+            }}</a>
+          </div>
+          <div class="what-i-do__content-item-icon">
+            <img :src="slide.image" alt="What I Do" />
+          </div>
         </div>
-        <div class="what-i-do__content-item-icon">
-          <img :src="tab.image" alt="What I Do" />
-        </div>
-      </div>
-    </div>
+      </SwiperSlide>
+    </Swiper>
   </div>
 </template>
 
@@ -107,7 +99,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100vw;
   background: $black;
   color: $white;
   font-family: $font-family;
@@ -137,23 +129,6 @@ onUnmounted(() => {
 
     @media (min-width: $desktopSmall) {
       gap: 4rem;
-    }
-
-    /* Hide the scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
-
-    /* WebKit (Safari/Chrome) */
-    &::-webkit-scrollbar {
-      width: 0.1px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: transparent;
     }
   }
 
@@ -191,6 +166,23 @@ onUnmounted(() => {
       width: 100%;
       height: 2px;
       background-color: $orange;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+
+    @media (min-width: $desktopSmall) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+      padding: 4rem 0;
     }
   }
 
@@ -270,6 +262,26 @@ onUnmounted(() => {
       justify-content: center;
       gap: 3rem;
     }
+  }
+
+  &__fade-in {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  &__swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__swiper-slide {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+
+    @media (min-width: $desktopSmall) {
+      padding: 0 11%;
+    }
+
   }
 }
 </style>
