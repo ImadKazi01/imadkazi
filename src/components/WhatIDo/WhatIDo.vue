@@ -114,61 +114,6 @@ onMounted(() => {
     transform: translateY(0);
   }
 
-  &__buttons {
-    display: flex;
-    width: 100%;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    overflow: scroll;
-
-    @media (min-width: $tablet) {
-      justify-content: center;
-      gap: 3rem;
-      margin-bottom: 2rem;
-    }
-
-    @media (min-width: $desktopSmall) {
-      gap: 4rem;
-    }
-  }
-
-  &__buttons button {
-    border: none;
-    background-color: transparent;
-    padding: 0.2rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    color: rgba($white, 0.7);
-    transition: color 0.3s;
-
-    @media (min-width: $desktopSmall) {
-      font-size: 1.7rem;
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      width: 0%;
-      height: 2px;
-      margin-top: 0.5rem;
-      background-color: $orange;
-      transition: all 0.3s ease-in-out;
-    }
-  }
-
-  &__buttons button.active {
-    color: $orange;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: $orange;
-    }
-  }
-
   &__content {
     display: flex;
     flex-direction: column-reverse;
@@ -177,12 +122,14 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     padding: 2rem 0;
+    text-align: center;
 
     @media (min-width: $desktopSmall) {
       flex-direction: row;
       justify-content: center;
       gap: 3rem;
       padding: 4rem 0;
+      text-align: start;
     }
   }
 
@@ -213,12 +160,15 @@ onMounted(() => {
     &-text {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 1rem;
+      margin-bottom: 2rem;
 
       @media (min-width: $desktopSmall) {
+        align-items: flex-start;
         max-width: 60%;
         gap: 2rem;
+        margin: 0;
       }
 
       h2 {
@@ -238,14 +188,13 @@ onMounted(() => {
       p {
         font-size: 1.2rem;
         line-height: 1.5;
-        margin: 0;
+        margin-bottom: 1rem;
         width: 100%;
 
         @media (min-width: $tablet) {
           font-size: 1.6rem;
           line-height: 1.2;
           width: 80%;
-          margin: 0.5rem 0;
         }
       }
     }
@@ -271,6 +220,18 @@ onMounted(() => {
   &__swiper {
     width: 100%;
     height: 100%;
+
+    &:deep(.swiper-pagination-bullet) {
+      width: 3.4rem;
+      height: 0.4rem;
+      display: inline-block;
+      background: #fff;
+      border-radius: 0;
+    }
+
+    &:deep(.swiper-pagination-bullet-active) {
+      background: $orange;
+    }
   }
 
   &__swiper-slide {
@@ -281,7 +242,6 @@ onMounted(() => {
     @media (min-width: $desktopSmall) {
       padding: 0 11%;
     }
-
   }
 }
 </style>
