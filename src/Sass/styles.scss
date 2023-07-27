@@ -1,33 +1,33 @@
 @import "./var.scss";
 @font-face {
-  font-family: 'Arboria';
+  font-family: "Arboria";
   src: url("https://use.typekit.net/xiv8sym.css");
 }
 body {
-  font-family: 'Arboria', sans-serif;
+  font-family: "Arboria", sans-serif;
 }
 div {
-  font-family: 'Arboria', sans-serif;
+  font-family: "Arboria", sans-serif;
 }
 
 .App {
-    text-align: center;
-  }
-  
-  .logo {
-    height: 40px;
-    pointer-events: none;
-  }
-  
-  .App-header {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-  }
-  
+  text-align: center;
+}
+
+.logo {
+  height: 40px;
+  pointer-events: none;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
 .active {
   color: $white !important;
   background-color: $orange;
@@ -43,10 +43,7 @@ div {
   }
 }
 .bg {
-  background-image: url(../Assets/parallax-1.png);
-  background-position: center;
-  background-size: cover;
-
+  background: #181818;
   @media (max-width: $mobile) {
     background-position: 40%;
   }
@@ -62,4 +59,11 @@ div {
     min-height: 370px !important;
   }
 }
-  
+
+h1 {
+  letter-spacing: 1rem;
+
+  @media (max-width: $mobile) {
+    letter-spacing: 0.5rem;
+  }
+}

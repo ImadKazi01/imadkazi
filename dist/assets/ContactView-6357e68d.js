@@ -1,0 +1,1 @@
+import{_ as e,o as t,c}from"./index-40381944.js";const _={},o={class:"contact"};function n(s,a){return t(),c("div",o,"Contact")}const d=e(_,[["render",n],["__scopeId","data-v-e4433e57"]]);export{d as default};
