@@ -34,6 +34,7 @@ const swiperConfig = {
   pagination: {
     clickable: true
   },
+  loop: true,
   modules: [Autoplay, Pagination],
   slidesPerView: 1
 }
