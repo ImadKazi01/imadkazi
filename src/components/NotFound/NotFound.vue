@@ -1,12 +1,17 @@
+<script setup>
+import NotFound from '../../assets/404.png'
+</script>
 <template>
   <div class="not-found">
     <div class="not-found__img">
-      <img src="../images/404.png" alt="404" />
+      <img :src="NotFound" alt="404" />
     </div>
     <div class="not-found__content">
       <span class="not-found__code">404</span>
       <h1 class="not-found__header">Looks like you're lost</h1>
-      <p class="not-found__copy">Sorry, we can't find the page you're looking for. Let's get you back!</p>
+      <p class="not-found__copy">
+        Sorry, we can't find the page you're looking for. Let's get you back!
+      </p>
       <a href="/" class="btn btn-primary">Back home</a>
     </div>
   </div>
@@ -24,7 +29,7 @@
   margin-top: 1rem;
 
   @media (min-width: $tablet) {
-   margin-top: 3rem;
+    margin-top: 3rem;
   }
 
   &__img {
