@@ -29,25 +29,27 @@ const props = defineProps({
 })
 </script>
 <template>
-  <div class="hero">
-    <div class="hero__content">
-      <h1>{{ title }}</h1>
-      <p>{{ copy }}</p>
-      <a
-        :href="ctaLink"
-        class="btn"
-        :class="{
-          'btn-primary': props.buttonStyle === 'primary',
-          'btn-secondary': props.buttonStyle === 'secondary',
-          '': props.buttonStyle === ''
-        }"
-        >{{ ctaText }}</a
-      >
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <h1>{{ title }}</h1>
+        <p>{{ copy }}</p>
+        <a
+          :href="ctaLink"
+          class="btn"
+          :class="{
+            'btn-primary': props.buttonStyle === 'primary',
+            'btn-secondary': props.buttonStyle === 'secondary',
+            '': props.buttonStyle === ''
+          }"
+          >{{ ctaText }}</a
+        >
+      </div>
+      <div class="hero__img">
+        <img :src="image" alt="Hero Image" />
+      </div>
     </div>
-    <div class="hero__img">
-      <img :src="image" alt="Hero Image" />
-    </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -77,30 +79,36 @@ const props = defineProps({
 
 .hero {
   display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
   width: 100%;
-  height: 75vh;
-  font-family: $font-family;
-  color: $white;
-  background: $black;
 
-  @media (min-width: $tablet) {
-    gap: 3rem;
-    height: 85vh;
-  }
+  &__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    font-family: $font-family;
+    color: $white;
+    background: $black;
 
-  @media (min-width: $desktopSmall) {
-    flex-direction: row;
-    gap: 6rem;
-    height: 75vh;
+    @media (min-width: $tablet) {
+      gap: 3rem;
+      
+    }
+
+    @media (min-width: $desktopSmall) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 6rem;
+      height: 65vh;
+    }
   }
 
   &__img {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     height: auto;
     background: $orange;
     border: solid 0.45rem $white;
@@ -120,8 +128,13 @@ const props = defineProps({
     }
 
     @media (min-width: $tablet) {
-      max-width: 400px;
+      max-width: 500px;
       border: solid 0.6rem $white;
+    }
+
+    @media (min-width: $desktopSmall) {
+      max-width: 550px;
+      border: solid 0.8rem $white;
     }
   }
 
@@ -139,6 +152,7 @@ const props = defineProps({
     @media (min-width: $desktopSmall) {
       text-align: left;
       animation-delay: 0.5s;
+      padding: 0;
     }
 
     h1 {

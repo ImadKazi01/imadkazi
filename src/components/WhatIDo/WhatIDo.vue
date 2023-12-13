@@ -1,8 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, Pagination } from 'swiper/modules'
 import data from '../../data/service.json'
+import * as HeroIcons from '@heroicons/vue/20/solid'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -26,17 +25,9 @@ const getServiceButtonText = (services) => {
   return `Explore ${services.title}`
 }
 
-const swiperConfig = {
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false
-  },
-  pagination: {
-    clickable: true
-  },
-  loop: true,
-  modules: [Autoplay, Pagination],
-  slidesPerView: 1
+const getIconComponent = (iconName) => {
+  // Return the corresponding icon component or a default one if not found
+  return HeroIcons[iconName] || HeroIcons['ArrowRightIcon']
 }
 
 onMounted(() => {
@@ -50,8 +41,6 @@ onMounted(() => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('what-i-do__fade-in')
-      } else {
-        entry.target.classList.remove('what-i-do__fade-in')
       }
     })
   }, options)
@@ -62,22 +51,35 @@ onMounted(() => {
 
 <template>
   <div class="what-i-do" ref="componentRef">
-    <Swiper class="what-i-do__swiper" v-bind="swiperConfig">
-      <SwiperSlide class="what-i-do__swiper-slide" v-for="slide in props.services" :key="slide.id">
-        <div class="what-i-do__content">
-          <div class="what-i-do__content-item-text">
-            <h2>{{ slide.title }}</h2>
-            <p>{{ slide.desc }}</p>
-            <a :href="getServiceLink(slide)" class="btn btn-primary">{{
-              getServiceButtonText(slide)
-            }}</a>
-          </div>
-          <div class="what-i-do__content-item-icon">
-            <img :src="slide.image" alt="What I Do" />
-          </div>
+    <div class="what-i-do__header">
+      <div class="what-i-do__header--headings">
+        <span class="what-i-do__header--subtitle"> My Services </span>
+        <h2 class="what-i-do__header--title">Providing a wide range of digital services</h2>
+      </div>
+      <p class="what-i-do__header--meta">
+        With expertise in photography, design, and development, offering a spectrum of digital
+        services that capture the essence of your brand, craft visually stunning designs, and
+        develop seamless digital experiences.
+      </p>
+    </div>
+    <div class="what-i-do__grid">
+      <div class="what-i-do__item" v-for="service in props.services" :key="service.id">
+        <div class="what-i-do__item--heading">
+          <component :is="getIconComponent(service.icon)" class="what-i-do__item--icon" />
+          <h5 class="what-i-do__item--title">
+            {{ service.title }}
+          </h5>
         </div>
-      </SwiperSlide>
-    </Swiper>
+        <p class="what-i-do__item--text">{{ service.keyword }}</p>
+        <ul class="what-i-do__item--list">
+          <li v-for="item in service.software" :key="item.id">{{ item.name }}</li>
+        </ul>
+        <a :href="getServiceLink(service)" class="what-i-do__cta"
+          >{{ getServiceButtonText(service) }}
+          <component :is="getIconComponent()" class="what-i-do__cta--icon"
+        /></a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -94,154 +96,162 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
-
 .what-i-do {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 100vw;
-  background: $black;
-  color: $white;
-  font-family: $font-family;
-  padding: 1rem;
-  margin: 2rem 0;
+  max-width: 1440px;
+  padding: 1rem 2rem;
   opacity: 0;
   transform: translateY(5rem);
   transition: all 0.5s ease-in-out;
+
+  @media (min-width: $desktopSmall) {
+    transition-delay: 1.5s;
+  }
 
   &__fade-in {
     opacity: 1;
     transform: translateY(0);
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    height: 100%;
-    padding: 2rem 0;
-    text-align: center;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3rem;
 
     @media (min-width: $desktopSmall) {
-      flex-direction: row;
-      justify-content: center;
-      gap: 3rem;
-      padding: 4rem 0;
-      text-align: start;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  &__content-item {
-    display: none;
-    animation: fade-in 1s;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    gap: 2rem;
 
-    &-icon {
-      margin-bottom: 1rem;
-      width: 100%;
-      max-width: 300px;
-
-      @media (min-width: $tablet) {
-        margin-bottom: 0;
-        max-width: 400px;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-        animation: imageAnimate 0.5s ease-in-out;
-        background: $white;
-        border: solid 0.5rem $orange;
-        border-radius: 50%;
-      }
+    @media (min-width: $desktopSmall) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    &-text {
+    &--headings {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       gap: 1rem;
-      margin-bottom: 2rem;
 
       @media (min-width: $desktopSmall) {
-        align-items: flex-start;
-        max-width: 60%;
-        gap: 2rem;
-        margin: 0;
+        width: 40%;
       }
+    }
 
-      h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        letter-spacing: 0.1rem;
-        text-transform: uppercase;
-        margin: 0;
-        letter-spacing: 0.3rem;
+    &--meta {
+      font-size: 1.4rem;
+      margin-bottom: 0;
 
-        @media (min-width: $tablet) {
-          font-size: 3.4rem;
-          letter-spacing: 0.7rem;
-        }
+      @media (min-width: $desktopSmall) {
+        width: 60%;
       }
+    }
 
-      p {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-        width: 100%;
+    &--subtitle {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $orange;
+    }
 
-        @media (min-width: $tablet) {
-          font-size: 1.6rem;
-          line-height: 1.2;
-          width: 80%;
-        }
-      }
+    &--title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 0;
     }
   }
 
-  &__content-item.active {
+  &__item {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
     gap: 1rem;
-
-    @media (min-width: $desktopSmall) {
-      flex-direction: row;
-      justify-content: center;
-      gap: 3rem;
-    }
-  }
-
-  &__fade-in {
+    border-radius: 1rem;
+    border: 2px dashed $teal;
+    color: $white;
+    height: 100%;
     animation: fade-in 1s ease-in-out;
-  }
-
-  &__swiper {
-    width: 100%;
-    height: 100%;
-
-    &:deep(.swiper-pagination-bullet) {
-      width: 3.4rem;
-      height: 0.4rem;
-      display: inline-block;
-      background: #fff;
-      border-radius: 0;
-    }
-
-    &:deep(.swiper-pagination-bullet-active) {
-      background: $orange;
-    }
-  }
-
-  &__swiper-slide {
-    width: 100%;
-    height: 100%;
-    padding: 0 2rem;
 
     @media (min-width: $desktopSmall) {
-      padding: 0 11%;
+      height: 100%;
+    }
+
+    &--heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &--text {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+      flex-grow: 1;
+    }
+
+    &--title {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    &--icon {
+      width: 2rem;
+    }
+
+    &--list {
+      list-style: inside;
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      flex-grow: 1;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    transition: all 0.5s ease-in-out;
+
+    &--icon {
+      width: 1.5rem;
+      margin-left: 0.2rem;
+      transition: all 0.3s ease-in-out;
+      color: $white;
+    }
+
+    &:hover {
+      color: $teal;
+
+      &:deep(.what-i-do__cta--icon) {
+        color: $teal;
+        margin-left: 0.5rem;
+      }
     }
   }
 }

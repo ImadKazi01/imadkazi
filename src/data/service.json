@@ -2,7 +2,26 @@
   {
     "serviceId": "1",
     "title": "design",
+    "icon": "PaintBrushIcon",
     "desc": "Offering a range of design services including logo creation, full branding, and brand identity development for clients. Skilled in print design for various purposes such as wedding invitations, banners, posters, and flyers.",
+    "keyword": "Branding, Logo Design, Print Design, Web Design, UI/UX Design, Brand Development, Packaging Design, Wedding Invitations, Promotional Prints",
+    "software": [
+      {
+        "name": "Adobe Photoshop"
+      },
+      {
+        "name": "Adobe Illustrator"
+      },
+      {
+        "name": "Adobe InDesign"
+      },
+      {
+        "name": "Adobe XD"
+      },
+      {
+        "name": "Figma"
+      }
+    ],
     "image": "../images/memoji_design.png",
     "content": "Design Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl sed aliquam ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl sed aliquam ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl.",
     "path": "/services/design",
@@ -15,7 +34,23 @@
   {
     "serviceId": "2",
     "title": "development",
+    "icon": "CommandLineIcon",
     "desc": "Frontend development using HTML5, CSS3, and JavaScript. Proficient in Vue.js and React to create dynamic Single Page Applications (SPAs) with API integration. Also experienced in webflow development.",
+    "keyword": "HTML5, CSS3, JavaScript, Vue.js, React, Webflow, API Integration, Single Page Applications, SPAs, Strapi",
+    "software": [
+      {
+        "name": "Visual Studio Code"
+      },
+      {
+        "name": "Webflow"
+      },
+      {
+        "name": "Strapi"
+      },
+      {
+        "name": "Shopify"
+      }
+    ],
     "image": "../images/memoji_development.png",
     "content": "Development Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl sed aliquam ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl sed aliquam ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl.",
     "path": "/services/development",
@@ -28,7 +63,23 @@
   {
     "serviceId": "3",
     "title": "photography",
+    "icon": "CameraIcon",
     "desc": "Specializing in commercial photography, including product and food photography. Experienced in capturing memorable moments at events such as birthdays and weddings.",
+    "keyword": "Commercial Photography, Product Photography, Food Photography, Event Photography, Birthday Photography, Wedding Photography",
+    "software": [
+      {
+        "name": "Adobe Lightroom"
+      },
+      {
+        "name": "Adobe Photoshop"
+      },
+      {
+        "name": "Adobe After Effects"
+      },
+      {
+        "name": "Adobe Premiere Pro"
+      }
+    ],
     "image": "../images/memoji_photography.png",
     "content": "Photography Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl sed aliquam ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl sed aliquam ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl.",
     "path": "/services/photography",
