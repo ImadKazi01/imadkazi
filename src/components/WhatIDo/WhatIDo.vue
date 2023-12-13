@@ -105,9 +105,11 @@ onMounted(() => {
   transform: translateY(5rem);
   transition: all 0.5s ease-in-out;
 
-  @media (min-width: $desktopSmall) {
+  @media (min-width: $desktop) {
     transition-delay: 1.5s;
   }
+
+  
 
   &__fade-in {
     opacity: 1;

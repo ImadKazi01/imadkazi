@@ -102,7 +102,7 @@ const props = defineProps({
       flex-direction: row;
       justify-content: space-between;
       gap: 6rem;
-      height: 65vh;
+      margin: 5rem 0;
     }
   }
 
@@ -128,13 +128,15 @@ const props = defineProps({
     }
 
     @media (min-width: $tablet) {
-      max-width: 500px;
+      max-width: 400px;
       border: solid 0.6rem $white;
     }
 
     @media (min-width: $desktopSmall) {
-      max-width: 550px;
+      max-width: 500px;
       border: solid 0.8rem $white;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

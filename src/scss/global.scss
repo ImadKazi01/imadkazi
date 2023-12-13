@@ -23,7 +23,8 @@ body {
   justify-content: center;
   gap: 1rem;
 
-  @media (max-width: $desktopSmall) {
-    gap: 5rem;
+  @media (min-width: $desktopSmall) {
+    gap: 2rem;
+    padding: 0 2rem;
   }
 }
