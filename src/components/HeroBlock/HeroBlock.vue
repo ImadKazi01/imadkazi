@@ -104,6 +104,10 @@ const props = defineProps({
       gap: 6rem;
       margin: 5rem 0;
     }
+
+    @media (min-width: $desktop) {
+      padding: 0;
+    }
   }
 
   &__img {

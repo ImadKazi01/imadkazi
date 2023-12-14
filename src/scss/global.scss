@@ -23,8 +23,12 @@ body {
   justify-content: center;
   gap: 1rem;
 
-  @media (min-width: $desktopSmall) {
+  @media (min-width: $macbook) {
     gap: 2rem;
     padding: 0 2rem;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0;
   }
 }
