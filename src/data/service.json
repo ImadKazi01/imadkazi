@@ -4,7 +4,7 @@
     "title": "design",
     "icon": "PaintBrushIcon",
     "desc": "Offering a range of design services including logo creation, full branding, and brand identity development for clients. Skilled in print design for various purposes such as wedding invitations, banners, posters, and flyers.",
-    "keyword": "Brand Development, Logo Design, Print Design, Web Design, UI/UX Design, Packaging Design, Wedding Invitations, Promotional Prints",
+    "keyword": "Brand Development, Logo Design, Print Design, Web Design, UI/UX Design, Wedding Invitations",
     "software": [
       {
         "name": "Adobe Photoshop"
@@ -36,7 +36,7 @@
     "title": "development",
     "icon": "CommandLineIcon",
     "desc": "Frontend development using HTML5, CSS3, and JavaScript. Proficient in Vue.js and React to create dynamic Single Page Applications (SPAs) with API integration. Also experienced in webflow development.",
-    "keyword": "HTML5, CSS3, JavaScript, Vue.js, React, Webflow, API Integration, Single Page Applications, SPAs, Strapi",
+    "keyword": "HTML5, CSS3, JavaScript, Vue.js, React, Webflow, API Integration, Single Page Applications, Strapi",
     "software": [
       {
         "name": "Visual Studio Code"
@@ -65,7 +65,7 @@
     "title": "photography",
     "icon": "CameraIcon",
     "desc": "Specializing in commercial photography, including product and food photography. Experienced in capturing memorable moments at events such as birthdays and weddings.",
-    "keyword": "Commercial Photography, Product Photography, Food Photography, Event Photography, Birthday Photography, Wedding Photography",
+    "keyword": "Commercial Photography, Product Photography, Food Photography, Event Photography, Wedding Photography",
     "software": [
       {
         "name": "Adobe Lightroom"

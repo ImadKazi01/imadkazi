@@ -132,7 +132,7 @@ const props = defineProps({
       border: solid 0.6rem $white;
     }
 
-    @media (min-width: $desktopSmall) {
+    @media (min-width: $desktop) {
       max-width: 500px;
       border: solid 0.8rem $white;
       margin-left: auto;

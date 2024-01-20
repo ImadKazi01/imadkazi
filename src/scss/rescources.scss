@@ -18,18 +18,14 @@ $tablet: 768px !default;
 $desktopSmall: 1024px !default;
 $desktop: 1440px !default;
 
-$h1-font-size: 4.8rem;
-$h1-font-size-desktop: 5.5rem;
-$h2-font-size: 3.6rem;
-$h2-font-size-desktop: 4.8rem;
-$h3-font-size: 2.8rem;
-$h3-font-size-desktop: 3.4rem;
-$h4-font-size: 2.4rem;
-$h4-font-size-desktop: 2.4rem;
-$h5-font-size: 2rem;
-$h5-font-size-desktop: 2rem;
-$h6-font-size: 2rem;
-$h6-font-size-desktop: 2rem;
+$h1-font-size: 48px;
+$h1-font-size-desktop: 55px;
+$h2-font-size: 36px;
+$h3-font-size: 28px;
+$h3-font-size-desktop: 34px;
+$h4-font-size: 24px;
+$base-font-size: 20px;
+$paragraph-font-size: 18px;
 
 h1 {
   font-size: $h1-font-size-desktop;
@@ -42,7 +38,7 @@ h1 {
 }
 
 h2 {
-  font-size: $h2-font-size-desktop;
+  font-size: $h1-font-size;
 
   @media (max-width: $desktopSmall) {
     font-size: $h2-font-size;
@@ -58,31 +54,19 @@ h3 {
 }
 
 h4 {
-  font-size: $h4-font-size-desktop;
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $base-font-size;
 
   @media (max-width: $desktopSmall) {
     font-size: $h4-font-size;
   }
 }
 
-h5 {
-  font-size: $h5-font-size-desktop;
-
-  @media (max-width: $desktopSmall) {
-    font-size: $h5-font-size;
-  }
-}
-
-h6 {
-  font-size: $h6-font-size-desktop;
-
-  @media (max-width: $desktopSmall) {
-    font-size: $h6-font-size;
-  }
-}
-
 p {
-  font-size: 1.6rem;
+  font-size: $paragraph-font-size;
   line-height: 1.5;
   margin-bottom: 2rem;
 }

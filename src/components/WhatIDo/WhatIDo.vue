@@ -105,12 +105,6 @@ onMounted(() => {
   transform: translateY(5rem);
   transition: all 0.5s ease-in-out;
 
-  @media (min-width: $desktop) {
-    transition-delay: 1.5s;
-  }
-
-  
-
   &__fade-in {
     opacity: 1;
     transform: translateY(0);
@@ -119,7 +113,7 @@ onMounted(() => {
   &__grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 3rem;
+    grid-gap: 2rem;
 
     @media (min-width: $desktopSmall) {
       grid-template-columns: repeat(3, 1fr);
@@ -169,7 +163,7 @@ onMounted(() => {
     }
 
     &--title {
-      font-size: 2.5rem;
+      font-size: $h2-font-size;
       font-weight: bold;
       line-height: 1;
       margin-bottom: 0;
@@ -201,7 +195,7 @@ onMounted(() => {
     }
 
     &--text {
-      font-size: 1.2rem;
+      font-size: $paragraph-font-size;
       margin-bottom: 0;
       flex-grow: 1;
     }
