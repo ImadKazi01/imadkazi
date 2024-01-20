@@ -78,6 +78,11 @@ const props = defineProps({
     max-width: 1440px;
   }
 
+  @media (min-width: $desktopSmall) {
+    padding: 1rem 0;
+  }
+  
+
   &__logo {
     display: flex;
     flex-direction: column;

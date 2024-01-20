@@ -105,6 +105,10 @@ onMounted(() => {
   transform: translateY(5rem);
   transition: all 0.5s ease-in-out;
 
+  @media (min-width: $desktopSmall) {
+    padding: 1rem 0;
+  }
+
   &__fade-in {
     opacity: 1;
     transform: translateY(0);
@@ -112,11 +116,11 @@ onMounted(() => {
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-gap: 2rem;
 
     @media (min-width: $desktopSmall) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
