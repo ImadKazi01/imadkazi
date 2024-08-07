@@ -1,13 +1,13 @@
 <script setup>
 import HeroBlock from '../components/HeroBlock/HeroBlock.vue'
-import WhatIDo from '../components/WhatIDo/WhatIDo.vue';
-import LatestCarousel from '../components/LatestCarousel/LatestCarousel.vue';
+import WhatIDo from '../components/WhatIDo/WhatIDo.vue'
+import WorkGrid from '../components/WorkGrid/WorkGrid.vue'
 </script>
 
 <template>
   <HeroBlock />
   <WhatIDo />
-  <LatestCarousel />
+  <WorkGrid />
 </template>
 
 <style lang="scss" scoped></style>

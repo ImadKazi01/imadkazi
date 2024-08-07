@@ -96,10 +96,11 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
+
 .what-i-do {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
+  max-width: 100%;
   padding: 1rem 2rem;
   opacity: 0;
   transform: translateY(5rem);
@@ -115,12 +116,38 @@ onMounted(() => {
   }
 
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-gap: 2rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
 
-    @media (min-width: $desktopSmall) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow-x: unset;
+      gap: 2rem;
+      padding-bottom: 0;
+    }
+
+    &::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Webkit browsers */
+    }
+
+    & > * {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    @media (min-width: 992px) {
+      & > * {
+        width: auto;
+      }
     }
   }
 
@@ -131,12 +158,6 @@ onMounted(() => {
     align-items: flex-start;
     margin-bottom: 3rem;
     gap: 2rem;
-
-    @media (min-width: $desktopSmall) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
 
     &--headings {
       display: flex;
@@ -151,11 +172,11 @@ onMounted(() => {
     }
 
     &--meta {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       margin-bottom: 0;
 
       @media (min-width: $desktopSmall) {
-        width: 60%;
+        width: 50%;
       }
     }
 
@@ -179,17 +200,11 @@ onMounted(() => {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 2rem;
     gap: 1rem;
     border-radius: 1rem;
     border: 2px dashed $teal;
     color: $white;
-    height: 100%;
     animation: fade-in 1s ease-in-out;
-
-    @media (min-width: $desktopSmall) {
-      height: 100%;
-    }
 
     &--heading {
       display: flex;

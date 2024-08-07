@@ -1,8 +1,8 @@
-import LatestCarousel from './LatestCarousel.vue'
+import WorkGrid from './WorkGrid.vue'
 
 export default {
-  title: 'Blocks/LatestCarousel',
-  component: LatestCarousel,
+  title: 'Blocks/WorkGrid',
+  component: WorkGrid,
   argTypes: {
     buttonStyle: {
       control: {
@@ -40,5 +40,5 @@ export const Default = {
     copy: `I'm a designer and developer based in London, UK. I specialise in creating bespoke websites and applications for businesses of all sizes.`,
     ctaText: 'View my work',
     ctaLink: '/work'
-  },
+  }
 }
