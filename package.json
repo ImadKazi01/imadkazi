@@ -20,6 +20,9 @@
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
   },
+  "engines": {
+    "node": ">=20.12.0"
+  },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@storybook/addon-essentials": "^8.6.14",
