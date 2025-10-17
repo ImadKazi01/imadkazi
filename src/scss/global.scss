@@ -1,4 +1,4 @@
-@import './rescources.scss';
+@use './resources.scss' as *;
 
 body {
   background-color: $black;
