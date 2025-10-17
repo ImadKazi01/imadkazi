@@ -27,7 +27,7 @@
     "@storybook/blocks": "^8.6.14",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@storybook/vue3": "^8.6.14",
-    "@storybook/vue3-vite": "^7.0.20",
+    "@storybook/vue3-vite": "^8.6.14",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
     "autoprefixer": "^10.4.14",
@@ -38,8 +38,8 @@
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.20",
+    "storybook": "^8.6.14",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.3.9"
+    "vite": "^6.4.0"
   }
 }
