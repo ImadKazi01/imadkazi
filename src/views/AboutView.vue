@@ -6,8 +6,6 @@
 
 
 <style lang="scss" scoped>
-@import '../scss/global.scss';
-
 .about {
   display: flex;
   justify-content: center;
