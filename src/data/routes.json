@@ -1,8 +1,13 @@
 [
   {
-    "title": "Home",
-    "component": "HomeView",
+    "title": "ImadOS",
+    "component": "ImadOS",
     "path": "/"
+  },
+  {
+    "title": "Home (Classic)",
+    "component": "HomeView",
+    "path": "/classic"
   },
   {
     "title": "Work",
