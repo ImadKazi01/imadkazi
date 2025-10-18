@@ -46,7 +46,7 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
       width: typeof width === 'string' ? width : width + 'px', 
       height: typeof height === 'string' ? height : height + 'px' 
     }"
-          :class="{ 'maximized': maximized, 'finder-style': windowType === 'finder', 'services-style': windowType === 'services', 'contact-style': windowType === 'contact', 'resume-style': windowType === 'resume' }"
+          :class="{ 'maximized': maximized, 'finder-style': windowType === 'finder', 'services-style': windowType === 'services', 'contact-style': windowType === 'contact', 'resume-style': windowType === 'resume', 'about-style': windowType === 'about' }"
   >
     <header class="titlebar" @mousedown="handleStartDrag">
       <div class="traffic-lights">
@@ -76,24 +76,25 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Mobile-specific styles
+  @media (max-width: $tablet) {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .window.maximized {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.window.finder-style {
-  background: #1a1a1a;
-  border: none;
-  border-radius: 8px;
-  box-shadow: none;
-}
-
 .window.finder-style .titlebar {
-  background: #2a2a2a;
-  border-bottom: 1px solid #404040;
-  height: 32px;
-  padding: 0 8px;
+
+  // Mobile-specific styles
+  @media (max-width: $tablet) {
+    border-bottom: none;
+  }
 }
 
 .window.finder-style .content {
@@ -117,6 +118,12 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
   height: calc(100% - 40px);
   padding: 0;
   overflow: hidden;
+}
+
+.window.about-style .content {
+  height: calc(100% - 40px);
+  padding: 0;
+  overflow-y: auto;
 }
 
 .window.maximizing {
@@ -200,6 +207,16 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
 
 .content {
   padding: 16px;
+}
+
+// Mobile content scrolling
+@media (max-width: $tablet) {
+  .window .content {
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 60px; // Extra space for dock
+  }
 }
 </style>
 

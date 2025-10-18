@@ -20,17 +20,23 @@ import {
   resizeApp
 } from '../utils/windowManager.js'
 
+// Mobile detection
+const isMobile = computed(() => {
+  if (typeof window === 'undefined') return false
+  return window.innerWidth <= 768
+})
+
 const openApps = ref([
   {
     id: 'about',
-    title: 'About Imad',
+    title: 'About Me',
     icon: '/favicon-32x32.png',
-    x: Math.max(0, (window.innerWidth - 900) / 2),
-    y: Math.max(38, (window.innerHeight - 550) / 2),
-    width: 900,
-    height: 550,
+    x: typeof window !== 'undefined' ? (window.innerWidth <= 768 ? 0 : Math.max(0, (window.innerWidth - 1000) / 2)) : 0,
+    y: typeof window !== 'undefined' ? (window.innerWidth <= 768 ? 0 : Math.max(38, (window.innerHeight - 600) / 2)) : 38,
+    width: typeof window !== 'undefined' ? (window.innerWidth <= 768 ? '95vw' : 1000) : 1000,
+    height: typeof window !== 'undefined' ? (window.innerWidth <= 768 ? '85vh' : 600) : 600,
     visible: true,
-    maximized: false,
+    maximized: typeof window !== 'undefined' ? window.innerWidth <= 768 : false,
     minimized: false,
     active: true
   }
@@ -100,8 +106,8 @@ function handleResizeApp(appId, size) {
               v-show="app.visible"
               class="window-layer"
               :style="{
-                left: app.maximized ? '10px' : app.x + 'px',
-                top: app.maximized ? '43px' : app.y + 'px',
+                left: isMobile ? '0' : (app.maximized ? '10px' : app.x + 'px'),
+                top: isMobile ? '0' : (app.maximized ? '43px' : app.y + 'px'),
                 width: app.maximized ? 'calc(100vw - 20px)' : 'auto',
                 height: app.maximized ? 'calc(100vh - 51px)' : 'auto',
                 position: app.maximized ? 'fixed' : 'absolute',
@@ -118,7 +124,7 @@ function handleResizeApp(appId, size) {
           :x="app.x"
           :y="app.y"
           :maximized="app.maximized"
-          :window-type="app.id === 'work' ? 'finder' : app.id === 'services' ? 'services' : app.id === 'contact' ? 'contact' : app.id === 'resume' ? 'resume' : 'default'"
+          :window-type="app.id === 'work' ? 'finder' : app.id === 'services' ? 'services' : app.id === 'contact' ? 'contact' : app.id === 'resume' ? 'resume' : app.id === 'about' ? 'about' : 'default'"
           @close="handleCloseApp(app.id)"
           @minimize="handleMinimizeApp(app.id)"
           @maximize="(isMaximized) => handleMaximizeApp(app.id, isMaximized)"
@@ -170,23 +176,55 @@ function handleResizeApp(appId, size) {
   height: 100vh;
   padding-top: 38px; /* account for macOS-style menu bar */
   z-index: 1;
+
+  // Mobile-specific styles
+  @media (max-width: $tablet) {
+    padding-top: 0; /* no top bar on mobile */
+  }
 }
 
 .window-layer {
   position: absolute;
+
+  // Mobile-specific styles
+  @media (max-width: $tablet) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 50;
+    margin: 0;
+    padding: 0;
+    transform: translateX(0);
+  }
 }
 
 .window-layer.maximized {
   z-index: 10;
+
+  @media (max-width: $tablet) {
+    z-index: 50;
+  }
 }
 
 .window-layer.active {
   z-index: 10;
+
+  @media (max-width: $tablet) {
+    z-index: 50;
+  }
 }
 
 .window-layer:not(.active) {
   opacity: 0.8;
   transition: opacity 0.2s ease;
+
+  @media (max-width: $tablet) {
+    opacity: 1; // Always visible on mobile
+  }
 }
 
 .window-layer.active {

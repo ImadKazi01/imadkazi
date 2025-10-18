@@ -92,13 +92,13 @@
 
     &-link {
       font-size: 14px;
-      color: #007aff;
+      color: #fb923c;
       text-decoration: none;
       padding: 8px 0;
       transition: color 0.2s ease;
 
       &:hover {
-        color: #0056b3;
+        color: #d97706;
         text-decoration: underline;
       }
     }

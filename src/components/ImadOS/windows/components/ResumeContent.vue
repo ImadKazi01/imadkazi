@@ -207,14 +207,14 @@ const props = defineProps({
     font-size: 20px;
     font-weight: 400;
     margin: 0 0 16px 0;
-    color: #007aff;
+    color: #fb923c;
   }
 
   &__contact {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
   }
 
@@ -223,7 +223,7 @@ const props = defineProps({
     font-weight: 600;
     margin: 0 0 24px 0;
     color: #ffffff;
-    border-bottom: 2px solid #007aff;
+    border-bottom: 2px solid #fb923c;
     padding-bottom: 8px;
   }
 
@@ -257,17 +257,17 @@ const props = defineProps({
 
   &__job-company {
     font-size: 16px;
-    color: #007aff;
+    color: #fb923c;
     margin-right: 16px;
   }
 
   &__job-period {
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
   }
 
   &__job-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
     margin: 0 0 12px 0;
@@ -280,7 +280,7 @@ const props = defineProps({
   }
 
   &__achievement {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
     margin-bottom: 6px;
@@ -289,7 +289,7 @@ const props = defineProps({
 
     &::before {
       content: '•';
-      color: #007aff;
+      color: #fb923c;
       position: absolute;
       left: 0;
     }
@@ -314,17 +314,17 @@ const props = defineProps({
 
   &__edu-school {
     font-size: 16px;
-    color: #007aff;
+    color: #fb923c;
     margin-right: 16px;
   }
 
   &__edu-year {
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
   }
 
   &__edu-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
     margin: 8px 0 0 0;
@@ -352,7 +352,7 @@ const props = defineProps({
     color: #ffffff;
     padding: 6px 12px;
     border-radius: 16px;
-    font-size: 12px;
+    font-size: 14px;
     border: 1px solid #404040;
   }
 
@@ -379,12 +379,12 @@ const props = defineProps({
   }
 
   &__project-year {
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
   }
 
   &__project-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
     margin: 0 0 12px 0;
@@ -397,7 +397,7 @@ const props = defineProps({
   }
 
   &__tech-tag {
-    background: #007aff;
+    background: $orange-dark;
     color: #ffffff;
     padding: 4px 8px;
     border-radius: 12px;

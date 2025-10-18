@@ -5,10 +5,36 @@ $font-family: 'arboria','montserrat', sans-serif;
 
 // Colors
 $orange: #fb923c;
+$orange-dark: #d97706;
+$orange-darker: #b45309;
 $white: #ededed;
 $teal: #2ea4a2;
 $dark-blue: #0f172a;
 $black: #181818;
+
+// Common UI Colors
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-bg-hover: rgba(255, 255, 255, 0.15);
+$glass-border: rgba(255, 255, 255, 0.2);
+$glass-border-light: rgba(255, 255, 255, 0.1);
+$glass-bg-subtle: rgba(255, 255, 255, 0.05);
+
+// Common Spacing
+$mobile-header-padding: 16px 20px;
+$mobile-section-padding: 16px 20px;
+$mobile-action-padding: 16px 24px;
+$desktop-header-padding: 16px 24px;
+
+// Common Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 20px;
+
+// Common Backdrop Filters
+$backdrop-blur-sm: blur(8px);
+$backdrop-blur-md: blur(12px);
+$backdrop-blur-lg: blur(20px);
 
 // Breakpoints
 $phone: 320px !default;
@@ -122,5 +148,129 @@ p {
       background-color: $teal;
       color: $white;
     }
+  }
+}
+
+// Button Mixins
+@mixin primary-button {
+  background: $orange-dark;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $orange-darker;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+@mixin secondary-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+@mixin active-state {
+  background: $orange-dark;
+  color: #ffffff;
+  border-color: $orange-dark;
+
+  &:hover {
+    background: $orange-darker;
+  }
+}
+
+@mixin loading-state {
+  background: $orange-darker;
+  cursor: not-allowed;
+  transform: none;
+}
+
+// Common UI Mixins
+@mixin glass-card {
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $radius-md;
+  backdrop-filter: $backdrop-blur-md;
+}
+
+@mixin glass-card-hover {
+  &:hover {
+    background: $glass-bg-hover;
+  }
+}
+
+@mixin mobile-header {
+  padding: $mobile-header-padding;
+  backdrop-filter: $backdrop-blur-lg;
+  border-bottom: 1px solid $glass-border-light;
+}
+
+@mixin mobile-section {
+  padding: $mobile-section-padding;
+  display: flex;
+  gap: 8px;
+}
+
+@mixin mobile-tab {
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $radius-xl;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover:not(&--active) {
+    background: $glass-bg-hover;
+  }
+}
+
+@mixin mobile-service-tab {
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $radius-lg;
+  color: #ffffff;
+  padding: 16px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 80px;
+
+  &:hover:not(&--active) {
+    background: $glass-bg-hover;
   }
 }

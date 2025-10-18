@@ -1,32 +1,15 @@
 <template>
   <div class="contact-actions">
-    <div class="contact-actions__buttons">
-      <button 
-        class="contact-actions__btn contact-actions__btn--secondary"
-        @click="handleSaveDraft"
-        :disabled="isSubmitting"
-      >
-        Save Draft
-      </button>
-      <button 
-        class="contact-actions__btn contact-actions__btn--primary" 
-        :class="{ 'contact-actions__btn--loading': isSubmitting }"
-        @click="handleSendMessage"
-        :disabled="isSubmitting"
-      >
-        <span v-if="isSubmitting">Sending...</span>
-        <span v-else-if="isSubmitted">Sent!</span>
-        <span v-else>Send Message</span>
-      </button>
-    </div>
-    <div class="contact-actions__status">
-      <span class="contact-actions__status-text" :class="{ 'contact-actions__status-text--over': isOverLimit }">
-        {{ characterCount }}/500 characters
-      </span>
-      <div v-if="!isFormValid && hasAttemptedSubmit" class="contact-actions__validation">
-        Please fix the errors above
-      </div>
-    </div>
+    <button 
+      class="contact-actions__btn contact-actions__btn--primary" 
+      :class="{ 'contact-actions__btn--loading': isSubmitting }"
+      @click="handleSendMessage"
+      :disabled="isSubmitting"
+    >
+      <span v-if="isSubmitting">Sending...</span>
+      <span v-else-if="isSubmitted">Sent!</span>
+      <span v-else>Send Message</span>
+    </button>
   </div>
 </template>
 
@@ -40,7 +23,7 @@ const props = defineProps({
   isSubmitted: { type: Boolean, default: false }
 })
 
-const emit = defineEmits(['send-message', 'save-draft', 'validate-form', 'check-validation'])
+const emit = defineEmits(['send-message', 'validate-form', 'check-validation'])
 
 const hasAttemptedSubmit = ref(false)
 
@@ -67,9 +50,6 @@ function handleSendMessage() {
   })
 }
 
-function handleSaveDraft() {
-  emit('save-draft', props.formData)
-}
 </script>
 
 <style scoped lang="scss">
@@ -80,23 +60,25 @@ function handleSaveDraft() {
   background: #2a2a2a;
   padding: 16px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
 
-  &__buttons {
-    display: flex;
-    gap: 12px;
+  @media (max-width: $tablet) {
+    background: transparent;
   }
 
   &__btn {
-    padding: 10px 20px;
+    padding: 10px 0;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
 
     &:disabled {
       opacity: 0.5;
@@ -104,28 +86,13 @@ function handleSaveDraft() {
     }
 
     &--primary {
-      background: #007aff;
-      color: white;
-
-      &:hover:not(:disabled) {
-        background: #0056b3;
-      }
+      @include primary-button;
 
       &--loading {
-        background: #0056b3;
-        cursor: not-allowed;
+        @include loading-state;
       }
     }
 
-    &--secondary {
-      background: #404040;
-      color: #ffffff;
-      border: 1px solid #555;
-
-      &:hover:not(:disabled) {
-        background: #555;
-      }
-    }
   }
 
   &__status {

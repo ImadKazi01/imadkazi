@@ -1,15 +1,5 @@
 <template>
   <div class="service-card">
-    <div class="service-card__header">
-      <div class="service-card__icon">
-        <component :is="getServiceIcon(service.icon)" class="service-card__icon-svg" />
-      </div>
-      <div class="service-card__title">
-        <h3 class="service-card__name">{{ service.name }}</h3>
-        <p class="service-card__desc">{{ service.desc }}</p>
-      </div>
-    </div>
-
     <div class="service-card__content">
       <div class="service-card__section">
         <h4 class="service-card__section-title">Technologies & Tools</h4>
@@ -82,73 +72,16 @@ function getServiceIcon(iconName) {
 @import '../../../../scss/global.scss';
 
 .service-card {
-  background: #2a2a2a;
-  border-radius: 12px;
-  padding: 24px;
-  border: 1px solid #404040;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  margin-bottom: 24px;
-
-  &__header {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #404040;
-  }
-
-  &__icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(74, 158, 255, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  &__icon-svg {
-    width: 24px;
-    height: 24px;
-    color: #4a9eff;
-  }
-
-  &__title {
-    flex: 1;
-  }
-
-  &__name {
-    font-size: 20px;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0 0 8px;
-  }
-
-  &__desc {
-    font-size: 14px;
-    color: #999;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  &__content {
-    margin-bottom: 24px;
-  }
 
   &__section {
     margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   &__section-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #ffffff;
     margin: 0 0 12px;
@@ -163,8 +96,8 @@ function getServiceIcon(iconName) {
   }
 
   &__keyword {
-    background: rgba(74, 158, 255, 0.1);
-    color: #4a9eff;
+    background: rgba(217, 119, 6, 0.1);
+    color: #fb923c;
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 12px;
@@ -181,20 +114,20 @@ function getServiceIcon(iconName) {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
   }
 
   &__software-dot {
     width: 6px;
     height: 6px;
-    background: #4a9eff;
+    background: #fb923c;
     border-radius: 50%;
     flex-shrink: 0;
   }
 
   &__content-text {
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
     line-height: 1.6;
     margin: 0;
@@ -211,27 +144,22 @@ function getServiceIcon(iconName) {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
 
     &--primary {
-      background: #4a9eff;
-      color: #ffffff;
-
-      &:hover {
-        background: #3a8eef;
-      }
+      @include primary-button;
     }
 
     &--secondary {
       background: transparent;
-      color: #4a9eff;
-      border: 1px solid #4a9eff;
+      color: #fb923c;
+      border: 1px solid #fb923c;
 
       &:hover {
-        background: rgba(74, 158, 255, 0.1);
+        background: rgba(251, 146, 60, 0.1);
       }
     }
   }

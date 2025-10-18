@@ -94,8 +94,8 @@ function getCategoryCount(categoryId) {
     }
 
     &--active {
-      background: rgba(74, 158, 255, 0.2);
-      color: #4a9eff;
+      background: rgba(251, 146, 60, 0.2);
+      color: #fb923c;
     }
   }
 

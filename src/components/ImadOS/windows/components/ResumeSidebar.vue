@@ -24,15 +24,19 @@
       <h4 class="resume-sidebar__info-title">Quick Info</h4>
       <div class="resume-sidebar__info-item">
         <span class="resume-sidebar__info-label">Location:</span>
-        <span class="resume-sidebar__info-value">London, UK</span>
+        <span class="resume-sidebar__info-value">{{ resumeData.sidebar.location }}</span>
       </div>
       <div class="resume-sidebar__info-item">
         <span class="resume-sidebar__info-label">Experience:</span>
-        <span class="resume-sidebar__info-value">5+ years</span>
+        <span class="resume-sidebar__info-value">{{ resumeData.sidebar.experience }}</span>
       </div>
       <div class="resume-sidebar__info-item">
-        <span class="resume-sidebar__info-label">Availability:</span>
-        <span class="resume-sidebar__info-value">Open to work</span>
+        <span class="resume-sidebar__info-label">Specialization:</span>
+        <span class="resume-sidebar__info-value">{{ resumeData.sidebar.specialization }}</span>
+      </div>
+      <div class="resume-sidebar__info-item">
+        <span class="resume-sidebar__info-label">Status:</span>
+        <span class="resume-sidebar__info-value">{{ resumeData.sidebar.status }}</span>
       </div>
     </div>
   </div>
@@ -50,7 +54,8 @@ import {
 
 const props = defineProps({
   sections: { type: Array, required: true },
-  activeSection: { type: String, required: true }
+  activeSection: { type: String, required: true },
+  resumeData: { type: Object, required: true }
 })
 
 const emit = defineEmits(['select-section'])
@@ -81,7 +86,7 @@ function selectSection(sectionId) {
   min-width: 280px;
   background: #2a2a2a;
   border-right: 1px solid #404040;
-  padding: 24px;
+  padding: 20px;
   overflow-y: auto;
   flex-shrink: 0;
 
@@ -103,7 +108,7 @@ function selectSection(sectionId) {
   }
 
   &__nav {
-    margin-bottom: 32px;
+    margin-bottom: 22px;
   }
 
   &__list {
@@ -116,7 +121,7 @@ function selectSection(sectionId) {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
+    padding: 10px 0;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -127,8 +132,8 @@ function selectSection(sectionId) {
     }
 
     &--active {
-      background: #007aff;
-      color: #ffffff;
+      @include active-state;
+      padding: 10px 16px;
 
       .resume-sidebar__icon {
         color: #ffffff;
@@ -159,7 +164,7 @@ function selectSection(sectionId) {
     &-item {
       display: flex;
       flex-direction: column;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     &-label {

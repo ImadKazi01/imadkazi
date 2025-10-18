@@ -60,7 +60,7 @@ function formatDate(dateString) {
 
   &-header {
     display: grid;
-    grid-template-columns: 1fr 200px 100px 80px;
+    grid-template-columns: 1fr 300px 200px 80px;
     gap: 16px;
     padding: 8px 16px;
     background: #2a2a2a;
@@ -103,7 +103,7 @@ function formatDate(dateString) {
 
   &--list {
     display: grid;
-    grid-template-columns: 1fr 200px 100px 80px;
+    grid-template-columns: 1fr 300px 200px 80px;
     gap: 16px;
     padding: 8px 16px;
     border-bottom: 1px solid #2a2a2a;
@@ -114,7 +114,7 @@ function formatDate(dateString) {
     }
 
     &--selected {
-      background: rgba(74, 158, 255, 0.1);
+      background: rgba(217, 119, 6, 0.1);
     }
   }
 }

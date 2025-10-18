@@ -150,7 +150,7 @@ function navigateToBreadcrumb(index) {
   &-link {
     background: none;
     border: none;
-    color: #4a9eff;
+    color: #fb923c;
     cursor: pointer;
     text-decoration: none;
     font-size: 14px;
@@ -186,8 +186,8 @@ function navigateToBreadcrumb(index) {
 
     &:focus {
       outline: none;
-      border-color: #4a9eff;
-      box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.2);
+      border-color: #fb923c;
+      box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.2);
     }
   }
 }
@@ -215,8 +215,7 @@ function navigateToBreadcrumb(index) {
   }
 
   &--active {
-    background: #4a9eff;
-    color: white;
+    @include active-state;
   }
 }
 

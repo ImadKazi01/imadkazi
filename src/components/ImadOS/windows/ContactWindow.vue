@@ -1,25 +1,52 @@
 <template>
   <div class="contact">
-    <div class="contact__content">
-      <ContactForm
-        v-model:form-data="formData"
-        @send-message="sendMessage"
-        ref="contactFormRef"
-      />
+    <!-- Desktop Layout -->
+    <div class="contact__desktop">
+      <div class="contact__content">
+        <ContactForm
+          v-model:form-data="formData"
+          @send-message="sendMessage"
+          ref="contactFormRef"
+        />
 
-      <ContactSidebar />
+        <ContactSidebar />
+      </div>
+
+      <ContactActions
+        :form-data="formData"
+        :is-form-valid="isFormValid"
+        :is-submitting="isSubmitting"
+        :is-submitted="isSubmitted"
+        @send-message="sendMessage"
+        @validate-form="validateForm"
+        @check-validation="handleValidationCheck"
+      />
     </div>
 
-    <ContactActions
-      :form-data="formData"
-      :is-form-valid="isFormValid"
-      :is-submitting="isSubmitting"
-      :is-submitted="isSubmitted"
-      @send-message="sendMessage"
-      @save-draft="saveDraft"
-      @validate-form="validateForm"
-      @check-validation="handleValidationCheck"
-    />
+    <!-- Mobile Layout -->
+    <div class="contact__mobile">
+      <div class="mobile-header">
+        <div class="mobile-header__title">Get in Touch</div>
+      </div>
+
+      <div class="mobile-content">
+        <ContactForm
+          v-model:form-data="formData"
+          @send-message="sendMessage"
+          ref="contactFormRef"
+        />
+
+        <ContactActions
+          :form-data="formData"
+          :is-form-valid="isFormValid"
+          :is-submitting="isSubmitting"
+          :is-submitted="isSubmitted"
+          @send-message="sendMessage"
+          @validate-form="validateForm"
+          @check-validation="handleValidationCheck"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -79,10 +106,6 @@ function sendMessage() {
   }, 1000)
 }
 
-function saveDraft() {
-  console.log('Saving draft:', formData.value)
-  // Handle draft saving here
-}
 
 function validateForm() {
   if (contactFormRef.value) {
@@ -115,11 +138,50 @@ function handleValidationCheck(callback) {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
 
+  &__desktop {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+
+    @media (max-width: $tablet) {
+      display: flex;
+    }
+  }
+
   &__content {
     display: flex;
     flex: 1;
     overflow: hidden;
     min-height: 0;
   }
+}
+
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mobile-header;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+}
+
+.mobile-content {
+  flex: 1;
+  overflow: auto;
+  padding-bottom: 80px; // Extra space for dock
 }
 </style>

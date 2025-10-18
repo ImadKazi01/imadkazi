@@ -64,13 +64,13 @@ function selectWork(work) {
     border: 1px solid #404040;
 
     &:hover {
-      border-color: #4a9eff;
-      box-shadow: 0 2px 8px rgba(74, 158, 255, 0.2);
+      border-color: #fb923c;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
     }
 
     &--selected {
-      border-color: #4a9eff;
-      background: rgba(74, 158, 255, 0.1);
+      border-color: #fb923c;
+      background: rgba(217, 119, 6, 0.1);
     }
   }
 }
@@ -111,7 +111,7 @@ function selectWork(work) {
 }
 
 .finder__work-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin: 0 0 4px;
   color: #ffffff;

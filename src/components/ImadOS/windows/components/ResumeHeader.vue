@@ -80,18 +80,13 @@ function printResume() {
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
 
     &--primary {
-      background: #007aff;
-      color: white;
-
-      &:hover {
-        background: #0056b3;
-      }
+      @include primary-button;
     }
 
     &--secondary {

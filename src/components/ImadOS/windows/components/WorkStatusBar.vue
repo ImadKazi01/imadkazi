@@ -25,7 +25,7 @@ const props = defineProps({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 16px;
+  padding: 16px;
   background: #2a2a2a;
   border-top: 1px solid #404040;
   font-size: 12px;
@@ -33,7 +33,11 @@ const props = defineProps({
   min-height: 24px;
 
   &-text {
-    // Status text styles
+    word-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
   }
 
   &-right {

@@ -70,6 +70,14 @@ function restore(appId) {
   padding: 8px 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   z-index: 90;
+
+  // Mobile-specific styles
+  @media (max-width: $tablet) {
+    bottom: 8px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+  }
 }
 
 ul {
@@ -91,6 +99,13 @@ ul {
 
   img {
     border-radius: 5px;
+  }
+
+  // Mobile-specific styles
+  @media (max-width: $tablet) {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
   }
 }
 

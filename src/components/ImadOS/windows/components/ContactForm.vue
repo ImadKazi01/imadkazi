@@ -74,7 +74,10 @@
           >
             <option value="">Select a service</option>
             <option value="branding">Branding & Identity</option>
-            <option value="web-design">Web Design</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="print-design">Print Design</option>
+            <option value="social-media-design">Social Media Design</option>
+            <option value="web-design">UI/UX Design</option>
             <option value="web-development">Web Development</option>
             <option value="photography">Photography</option>
             <option value="consultation">Consultation</option>
@@ -314,12 +317,14 @@ defineExpose({
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 24px;
+    padding: 0;
     box-sizing: border-box;
+    margin-bottom: 20px;
   }
 
   &__header {
     margin-bottom: 32px;
+    padding: 24px 24px 0 24px;
   }
 
   &__title {
@@ -330,7 +335,7 @@ defineExpose({
   }
 
   &__subtitle {
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
     margin: 0;
   }
@@ -339,6 +344,7 @@ defineExpose({
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0 24px;
   }
 
   &__field {
@@ -347,7 +353,7 @@ defineExpose({
   }
 
   &__label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
     margin-bottom: 8px;
@@ -360,7 +366,7 @@ defineExpose({
     padding: 12px 16px;
     border: 1px solid #404040;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-family: inherit;
     background: #2a2a2a;
     color: #ffffff;
@@ -368,8 +374,8 @@ defineExpose({
 
     &:focus {
       outline: none;
-      border-color: #007aff;
-      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+      border-color: #fb923c;
+      box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.1);
     }
 
     &::placeholder {
