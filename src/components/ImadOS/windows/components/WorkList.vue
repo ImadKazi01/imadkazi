@@ -10,9 +10,7 @@
       v-for="work in workItems" 
       :key="work.title"
       class="finder__work-item finder__work-item--list"
-      @dblclick="openWorkDetail(work)"
-      @click="selectWork(work)"
-      :class="{ 'finder__work-item--selected': selectedWork?.title === work.title }"
+      @click="openWorkDetail(work)"
     >
       <div class="finder__list-cell finder__list-cell--name">
         <img :src="work.img" :alt="work.title" class="finder__list-thumbnail" />
@@ -26,19 +24,14 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  workItems: { type: Array, required: true },
-  selectedWork: { type: Object, default: null }
+defineProps({
+  workItems: { type: Array, required: true }
 })
 
-const emit = defineEmits(['openWorkDetail', 'selectWork'])
+const emit = defineEmits(['openWorkDetail'])
 
 function openWorkDetail(work) {
   emit('openWorkDetail', work)
-}
-
-function selectWork(work) {
-  emit('selectWork', work)
 }
 
 function formatDate(dateString) {

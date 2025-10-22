@@ -4,9 +4,7 @@
       v-for="work in workItems" 
       :key="work.title"
       class="finder__work-item finder__work-item--grid"
-      @dblclick="openWorkDetail(work)"
-      @click="selectWork(work)"
-      :class="{ 'finder__work-item--selected': selectedWork?.title === work.title }"
+      @click="openWorkDetail(work)"
     >
       <div class="finder__work-thumbnail">
         <img :src="work.img" :alt="work.title" />
@@ -25,19 +23,14 @@
 <script setup>
 import { EyeIcon } from '@heroicons/vue/24/outline'
 
-const props = defineProps({
-  workItems: { type: Array, required: true },
-  selectedWork: { type: Object, default: null }
+defineProps({
+  workItems: { type: Array, required: true }
 })
 
-const emit = defineEmits(['openWorkDetail', 'selectWork'])
+const emit = defineEmits(['openWorkDetail'])
 
 function openWorkDetail(work) {
   emit('openWorkDetail', work)
-}
-
-function selectWork(work) {
-  emit('selectWork', work)
 }
 </script>
 
@@ -49,6 +42,10 @@ function selectWork(work) {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   padding: 16px;
+
+  @media (max-width: $tablet) {
+    padding: 0;
+  }
 }
 
 .finder__work-item {

@@ -29,18 +29,14 @@
           <WorkGrid
             v-if="viewMode === 'grid'"
             :work-items="filteredWork"
-            :selected-work="selectedWork"
             @open-work-detail="openWorkDetail"
-            @select-work="selectWork"
           />
 
           <!-- List View -->
           <WorkList
             v-else
             :work-items="filteredWork"
-            :selected-work="selectedWork"
             @open-work-detail="openWorkDetail"
-            @select-work="selectWork"
           />
         </div>
       </div>
@@ -48,7 +44,6 @@
       <!-- Status Bar -->
       <WorkStatusBar
         :item-count="filteredWork.length"
-        :selected-work="selectedWork"
       />
     </div>
 
@@ -95,9 +90,7 @@
       <div class="mobile-content">
         <WorkGrid
           :work-items="filteredWork"
-          :selected-work="selectedWork"
           @open-work-detail="openWorkDetail"
-          @select-work="selectWork"
         />
       </div>
     </div>
@@ -119,7 +112,6 @@ const emit = defineEmits(['openWorkDetail'])
 const searchQuery = ref('')
 const viewMode = ref('grid')
 const selectedCategory = ref('all')
-const selectedWork = ref(null)
 const canGoBack = ref(false)
 const canGoForward = ref(false)
 const breadcrumbs = ref(['Work'])
@@ -130,7 +122,7 @@ const showMobileSearch = ref(false)
 // Mobile categories (simplified for mobile)
 const mobileCategories = [
   { id: 'all', name: 'All' },
-  { id: 'branding', name: 'Branding' },
+  { id: 'design', name: 'Design' },
   { id: 'development', name: 'Development' },
   { id: 'photography', name: 'Photography' }
 ]
@@ -169,7 +161,19 @@ const filteredWork = computed(() => {
 
   // Filter by category
   if (selectedCategory.value !== 'all') {
-    filtered = filtered.filter(work => work.category === selectedCategory.value)
+    // Map category IDs to their corresponding service names
+    const categoryServiceMap = {
+      'design': ['Branding', 'Web Design', 'Graphic Design'],
+      'development': ['Web Development'], 
+      'photography': ['Photography']
+    }
+    
+    const serviceNames = categoryServiceMap[selectedCategory.value]
+    if (serviceNames) {
+      filtered = filtered.filter(work => 
+        work.services && work.services.some(service => serviceNames.includes(service))
+      )
+    }
   }
 
   // Filter by search
@@ -188,16 +192,8 @@ const filteredWork = computed(() => {
 // Methods
 function selectCategory(categoryId) {
   selectedCategory.value = categoryId
-  selectedWork.value = null
 }
 
-function selectWork(work) {
-  selectedWork.value = work
-}
-
-function setViewMode(mode) {
-  viewMode.value = mode
-}
 
 function openWorkDetail(work) {
   emit('openWorkDetail', work)
@@ -225,7 +221,20 @@ function toggleMobileSearch() {
 
 function getCategoryCount(categoryId) {
   if (categoryId === 'all') return enhancedWorkData.value.length
-  return enhancedWorkData.value.filter(work => work.category === categoryId).length
+  
+  // Map category IDs to their corresponding service names
+  const categoryServiceMap = {
+    'design': ['Branding', 'Web Design', 'Graphic Design'],
+    'development': ['Web Development'], 
+    'photography': ['Photography']
+  }
+  
+  const serviceNames = categoryServiceMap[categoryId]
+  if (!serviceNames) return 0
+  
+  return enhancedWorkData.value.filter(work => 
+    work.services && work.services.some(service => serviceNames.includes(service))
+  ).length
 }
 </script>
 
@@ -351,7 +360,7 @@ function getCategoryCount(categoryId) {
   align-items: center;
   gap: 4px;
   @include mobile-tab;
-  font-size: 16px;
+  font-size: 14px;
 
   &--active {
     @include active-state;

@@ -1,0 +1,72 @@
+{
+  "id": "little-green-van",
+  "title": "The Little Green Van",
+  "subtitle": "Sustainable Food Brand & E-commerce",
+  "heroImage": "https://picsum.photos/seed/littlegreen-hero/1200/600",
+  "desktopIcon": "https://picsum.photos/seed/littlegreen-icon/64/64",
+  "link": "https://www.thelittlegreenvan.co.uk/",
+  "services": ["Branding", "Web Design", "Web Development"],
+  "year": "2024",
+  "client": "The Little Green Van",
+  "overview": "A complete brand identity and e-commerce platform for a sustainable food delivery service, emphasizing environmental values through design and user experience.",
+  "challenge": "Create a brand identity that communicates sustainability and freshness while developing an e-commerce platform that makes healthy food accessible and appealing to busy professionals.",
+  "solution": "Developed a nature-inspired brand identity with earthy tones and organic shapes, paired with a streamlined e-commerce experience that emphasizes the quality and sustainability of the food offerings.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Brand Philosophy",
+      "content": "The Little Green Van brand embodies the connection between nature and nourishment. The design language uses organic shapes, earth tones, and natural textures to communicate freshness and environmental responsibility."
+    },
+    {
+      "type": "image",
+      "src": "https://picsum.photos/seed/littlegreen-logo/800/400",
+      "alt": "Little Green Van Logo",
+      "caption": "Logo design featuring organic shapes and natural color palette"
+    },
+    {
+      "type": "text",
+      "title": "E-commerce Experience",
+      "content": "The online platform was designed to make healthy eating convenient and appealing. The interface emphasizes the quality and freshness of ingredients while making the ordering process simple and enjoyable."
+    },
+    {
+      "type": "image",
+      "src": "https://picsum.photos/seed/littlegreen-shop/1200/800",
+      "alt": "Online Shop",
+      "caption": "E-commerce interface showcasing product range"
+    },
+    {
+      "type": "text",
+      "title": "Sustainability Focus",
+      "content": "Every aspect of the design reinforces the brand's commitment to sustainability, from the packaging design to the website's messaging and visual elements."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "https://picsum.photos/seed/littlegreen-packaging/600/400",
+          "alt": "Sustainable Packaging",
+          "caption": "Eco-friendly packaging design"
+        },
+        {
+          "src": "https://picsum.photos/seed/littlegreen-delivery/600/400",
+          "alt": "Delivery System",
+          "caption": "Electric delivery van branding"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "stat1": "60%",
+    "stat1Label": "Increase in Orders",
+    "stat2": "90%",
+    "stat2Label": "Customer Retention",
+    "stat3": "100%",
+    "stat3Label": "Carbon Neutral Delivery"
+  },
+  "technologies": ["Webflow", "Figma", "E-commerce Integration", "Sustainability Tracking"],
+  "testimonial": {
+    "quote": "The brand perfectly captures our mission of making healthy, sustainable food accessible. The website makes ordering so easy, and customers love the environmental focus.",
+    "author": "Emma Thompson",
+    "role": "Founder, The Little Green Van"
+  }
+}

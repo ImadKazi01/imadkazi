@@ -1,0 +1,97 @@
+{
+  "id": "burgerize",
+  "title": "Burgerize",
+  "subtitle": "Full Brand Identity & Web Design",
+  "heroImage": "https://picsum.photos/seed/burgerize-hero/1200/600",
+  "desktopIcon": "https://picsum.photos/seed/burgerize-icon/64/64",
+  "link": "https://www.burgerizeonline.com/",
+  "services": ["Branding", "Web Design", "Photography"],
+  "year": "2024",
+  "client": "Burgerize",
+  "overview": "A complete brand identity and web design project for a local burger restaurant, including logo design, packaging, signage, and a fully functional website with online ordering system.",
+  "challenge": "Create a memorable brand identity that captures the essence of a premium burger experience while developing a user-friendly website that drives online orders and customer engagement.",
+  "solution": "Developed a bold, modern brand identity with a custom logo, comprehensive visual system, and a responsive website featuring an intuitive ordering system and mouth-watering food photography.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Brand Identity",
+      "content": "The Burgerize brand identity centers around bold, appetizing visuals that immediately communicate quality and taste. The logo features a custom wordmark with a subtle burger icon integration, while the color palette uses warm, food-inspired tones that evoke hunger and satisfaction."
+    },
+    {
+      "type": "image",
+      "src": "https://picsum.photos/seed/burgerize-logo/800/400",
+      "alt": "Burgerize Logo Design",
+      "caption": "Custom logo design featuring bold typography and burger icon integration"
+    },
+    {
+      "type": "text",
+      "title": "Visual System",
+      "content": "The visual system includes a comprehensive set of guidelines covering logo usage, color applications, typography, and photography style. This ensures consistent brand representation across all touchpoints."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "https://picsum.photos/seed/burgerize-menu/600/400",
+          "alt": "Menu Design",
+          "caption": "Restaurant menu design"
+        },
+        {
+          "src": "https://picsum.photos/seed/burgerize-packaging/600/400",
+          "alt": "Packaging Design",
+          "caption": "Takeaway packaging and branding"
+        },
+        {
+          "src": "https://picsum.photos/seed/burgerize-signage/600/400",
+          "alt": "Store Signage",
+          "caption": "Exterior and interior signage"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Web Design & Development",
+      "content": "The website was designed with a mobile-first approach, featuring high-quality food photography, an intuitive navigation system, and a streamlined online ordering process. The design emphasizes the visual appeal of the food while maintaining excellent usability."
+    },
+    {
+      "type": "image",
+      "src": "https://picsum.photos/seed/burgerize-website/1200/800",
+      "alt": "Burgerize Website",
+      "caption": "Homepage design showcasing the full brand experience"
+    },
+    {
+      "type": "text",
+      "title": "Photography",
+      "content": "Professional food photography was essential to showcase the quality and appeal of the menu items. Each dish was carefully styled and photographed to maximize visual impact and drive customer engagement."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "https://picsum.photos/seed/burgerize-food1/600/400",
+          "alt": "Burger Photography",
+          "caption": "Signature burger photography"
+        },
+        {
+          "src": "https://picsum.photos/seed/burgerize-food2/600/400",
+          "alt": "Side Dishes",
+          "caption": "Side dishes and accompaniments"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "stat1": "40%",
+    "stat1Label": "Increase in Online Orders",
+    "stat2": "85%",
+    "stat2Label": "Customer Satisfaction",
+    "stat3": "2.5x",
+    "stat3Label": "Social Media Engagement"
+  },
+  "technologies": ["Figma", "Adobe Creative Suite", "Square", "HTML/CSS", "JavaScript"],
+  "testimonial": {
+    "quote": "The new brand identity and website have completely transformed our business. We're seeing more customers than ever before, and the online ordering system has been a game-changer.",
+    "author": "Sarah Johnson",
+    "role": "Owner, Burgerize"
+  }
+}

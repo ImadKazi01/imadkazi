@@ -182,6 +182,10 @@ const props = defineProps({
     overflow-x: hidden;
     padding: 24px;
     box-sizing: border-box;
+
+    @media (max-width: $tablet) {
+      padding: 0;
+    }
   }
 
   &__section {

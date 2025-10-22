@@ -36,7 +36,7 @@ const emit = defineEmits(['selectCategory'])
 
 const categories = [
   { id: 'all', name: 'All Work', icon: FolderIcon },
-  { id: 'branding', name: 'Branding', icon: PencilIcon },
+  { id: 'design', name: 'Design', icon: PencilIcon },
   { id: 'development', name: 'Development', icon: CodeBracketIcon },
   { id: 'photography', name: 'Photography', icon: CameraIcon }
 ]
@@ -47,7 +47,20 @@ function selectCategory(categoryId) {
 
 function getCategoryCount(categoryId) {
   if (categoryId === 'all') return props.workData.length
-  return props.workData.filter(work => work.category === categoryId).length
+  
+  // Map category IDs to their corresponding service names
+  const categoryServiceMap = {
+    'design': ['Branding', 'Web Design', 'Graphic Design'],
+    'development': ['Web Development'], 
+    'photography': ['Photography']
+  }
+  
+  const serviceNames = categoryServiceMap[categoryId]
+  if (!serviceNames) return 0
+  
+  return props.workData.filter(work => 
+    work.services && work.services.some(service => serviceNames.includes(service))
+  ).length
 }
 </script>
 

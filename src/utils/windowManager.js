@@ -9,7 +9,8 @@ const contentSizes = {
   work: { width: 1200, height: 700 }, // Finder-style - needs space for grid/list
   services: { width: 1000, height: 650 }, // System Preferences - sidebar + content
   contact: { width: 1000, height: 700 }, // Mail.app - form + sidebar
-  resume: { width: 1200, height: 800 } // Preview.app - document viewing
+  resume: { width: 1200, height: 800 }, // Preview.app - document viewing
+  'case-study': { width: 1200, height: 900 } // Preview.app style for case studies
 }
 
 // Mobile-optimized window sizing
@@ -18,7 +19,8 @@ const mobileContentSizes = {
   work: { width: '95vw', height: '90vh' },
   services: { width: '95vw', height: '90vh' },
   contact: { width: '95vw', height: '90vh' },
-  resume: { width: '95vw', height: '90vh' }
+  resume: { width: '95vw', height: '90vh' },
+  'case-study': { width: '95vw', height: '90vh' }
 }
 
 // Detect if device is mobile
@@ -27,7 +29,7 @@ function isMobile() {
 }
 
 // Get appropriate window size based on device
-function getWindowSize(appId) {
+export function getWindowSize(appId) {
   if (isMobile()) {
     return mobileContentSizes[appId] || mobileContentSizes.about
   }
@@ -59,6 +61,11 @@ export const appConfigs = {
     id: 'resume',
     title: 'Resume',
     icon: '/favicon-32x32.png'
+  },
+  'case-study': {
+    id: 'case-study',
+    title: 'Case Study',
+    icon: '/favicon-32x32.png'
   }
 }
 
@@ -81,7 +88,7 @@ export function openApp(appId, openApps, activeApp) {
   const config = appConfigs[appId]
   if (config) {
     const windowSize = getWindowSize(appId)
-    
+
     // Mobile-friendly positioning
     let x, y
     if (isMobile()) {

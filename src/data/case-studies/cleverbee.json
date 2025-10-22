@@ -1,0 +1,77 @@
+{
+  "id": "cleverbee",
+  "title": "CleverBee Tuition",
+  "subtitle": "Educational Platform & Brand Identity",
+  "heroImage": "https://picsum.photos/seed/cleverbee-hero/1200/600",
+  "desktopIcon": "https://picsum.photos/seed/cleverbee-icon/64/64",
+  "link": "https://www.cleverbee.uk/",
+  "services": ["Branding", "Web Design", "Web Development"],
+  "year": "2024",
+  "client": "CleverBee Tuition",
+  "overview": "A comprehensive educational platform combining brand identity design with advanced web development, featuring integrated booking systems, chat functionality, and a complete learning management system.",
+  "challenge": "Create a professional educational platform that builds trust with parents while providing an intuitive experience for students and seamless booking management for tutors.",
+  "solution": "Developed a complete brand identity and custom web platform using Webflow with integrated third-party services for calendar management, one-to-one booking, and real-time chat functionality.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Brand Strategy",
+      "content": "The CleverBee brand was designed to convey trust, expertise, and approachability in the education sector. The bee motif represents hard work, community, and the sweet rewards of learning."
+    },
+    {
+      "type": "image",
+      "src": "https://picsum.photos/seed/cleverbee-logo/800/400",
+      "alt": "CleverBee Logo",
+      "caption": "Logo design featuring friendly bee character and educational elements"
+    },
+    {
+      "type": "text",
+      "title": "Platform Architecture",
+      "content": "The platform was built with scalability in mind, featuring a custom CMS, integrated booking system, and real-time communication tools. The architecture supports multiple user types with role-based access control."
+    },
+    {
+      "type": "image",
+      "src": "https://picsum.photos/seed/cleverbee-platform/1200/800",
+      "alt": "Platform Interface",
+      "caption": "Main platform interface showing dashboard and navigation"
+    },
+    {
+      "type": "text",
+      "title": "User Experience",
+      "content": "The user experience was designed with three distinct user journeys: parents researching tuition, students accessing learning materials, and tutors managing their schedules and students."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "https://picsum.photos/seed/cleverbee-parent/600/400",
+          "alt": "Parent Dashboard",
+          "caption": "Parent portal for tracking student progress"
+        },
+        {
+          "src": "https://picsum.photos/seed/cleverbee-student/600/400",
+          "alt": "Student Interface",
+          "caption": "Student learning interface"
+        },
+        {
+          "src": "https://picsum.photos/seed/cleverbee-tutor/600/400",
+          "alt": "Tutor Dashboard",
+          "caption": "Tutor management dashboard"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "stat1": "300%",
+    "stat1Label": "Increase in Bookings",
+    "stat2": "95%",
+    "stat2Label": "User Satisfaction",
+    "stat3": "50%",
+    "stat3Label": "Reduction in Admin Time"
+  },
+  "technologies": ["Webflow", "Figma", "JavaScript", "Third-party APIs", "CMS"],
+  "testimonial": {
+    "quote": "The platform has revolutionized how we manage our tuition business. The booking system is seamless, and parents love being able to track their child's progress in real-time.",
+    "author": "Michael Chen",
+    "role": "Director, CleverBee Tuition"
+  }
+}

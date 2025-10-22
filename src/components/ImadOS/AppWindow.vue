@@ -46,7 +46,7 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
       width: typeof width === 'string' ? width : width + 'px', 
       height: typeof height === 'string' ? height : height + 'px' 
     }"
-          :class="{ 'maximized': maximized, 'finder-style': windowType === 'finder', 'services-style': windowType === 'services', 'contact-style': windowType === 'contact', 'resume-style': windowType === 'resume', 'about-style': windowType === 'about' }"
+          :class="{ 'maximized': maximized, 'finder-style': windowType === 'finder', 'services-style': windowType === 'services', 'contact-style': windowType === 'contact', 'resume-style': windowType === 'resume', 'about-style': windowType === 'about', 'case-study-style': windowType === 'case-study' }"
   >
     <header class="titlebar" @mousedown="handleStartDrag">
       <div class="traffic-lights">
@@ -123,6 +123,12 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
 .window.about-style .content {
   height: calc(100% - 40px);
   padding: 0;
+  overflow-y: auto;
+}
+
+.window.case-study-style .content {
+  height: calc(100% - 40px);
+  padding: 0 !important;
   overflow-y: auto;
 }
 
@@ -203,10 +209,6 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
   gap: 8px;
   color: $white;
   font-weight: 600;
-}
-
-.content {
-  padding: 16px;
 }
 
 // Mobile content scrolling
