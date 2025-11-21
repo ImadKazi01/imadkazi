@@ -1,0 +1,31 @@
+{
+  "id": "lunara",
+  "title": "Lunara Skincare",
+  "subtitle": "Brand Identity & Web Design",
+  "heroImage": "../images/case-studies/lunara/Lunara.webp",
+  "desktopIcon": "https://picsum.photos/seed/lunara-icon/64/64",
+  "services": ["Branding", "Web Design"],
+  "year": "2025",
+  "client": "Lunara",
+  "overview": "A complete brand identity and web design project for a luxury skincare brand, including logo design, packaging, signage, and a fully functional website with online ordering system.",
+  "challenge": "Create a memorable brand identity that captures the essence of a premium skincare experience while developing a user-friendly website that drives online orders and customer engagement.",
+  "solution": "Developed a bold, modern brand identity with a custom logo, comprehensive visual system, and a responsive website featuring an intuitive ordering system and mouth-watering food photography.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Brand Identity",
+      "content": "The Lunara brand identity centers around bold, appetizing visuals that immediately communicate quality and taste. The logo features a custom wordmark with a subtle burger icon integration, while the color palette uses warm, food-inspired tones that evoke hunger and satisfaction."
+    },
+    {
+      "type": "text",
+      "title": "Ideation and Logo Development",
+      "content": "The creative direction focused on fluid forms and gentle movement, expressing natural flow of skincare. The logo design process explored soft cuves and rounded letter forms, with the letter 'L' feature a crescent moon shape to tie into the name 'Lunara'."
+    },
+    {
+      "type": "image",
+      "src": "../images/case-studies/lunara/Lunara.webp",
+      "alt": "Lunara Logo",
+      "caption": "Lunara Logo"
+    }
+  ]
+}

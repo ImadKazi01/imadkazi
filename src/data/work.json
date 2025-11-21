@@ -46,5 +46,14 @@
     "meta": {
       "title": "Dolce Juices"
     }
+  },
+  {
+    "title": "Lunara Skincare",
+    "desc": "Full Design including logo, logo mark, typography, colour palette, print material and packaging.",
+    "img": "../images/case-studies/lunara/Lunara.webp",
+    "link": "https://www.lunara.co.uk/",
+    "services": ["Branding"],
+    "path": "/work/lunara",
+    "component": "CaseStudyView"
   }
 ]
