@@ -5,7 +5,7 @@
 
 // Content-based window sizing - Optimized for each window type
 const contentSizes = {
-  about: { width: 1000, height: 900 }, // Contact card - larger for new content
+  about: { width: 1000, height: 950 }, // Contact card - larger for new content
   work: { width: 1200, height: 700 }, // Finder-style - needs space for grid/list
   services: { width: 1000, height: 650 }, // System Preferences - sidebar + content
   contact: { width: 1000, height: 700 }, // Mail.app - form + sidebar

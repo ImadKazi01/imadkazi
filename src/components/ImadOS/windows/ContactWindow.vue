@@ -182,6 +182,6 @@ function handleValidationCheck(callback) {
 .mobile-content {
   flex: 1;
   overflow: auto;
-  padding-bottom: 80px; // Extra space for dock
+  padding-bottom: 120px; // Extra space for dock
 }
 </style>

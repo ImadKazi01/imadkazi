@@ -4,38 +4,28 @@
     <div class="contact-card__desktop">
       <div class="profile-section">
         <div class="avatar-container">
-          <img src="/images/memoji.png" alt="Imad" class="avatar" />
+          <img :src="heroData.image.replace('../', '/')" :alt="heroData.title" class="avatar" />
         </div>
         <div class="profile-info">
-          <h1 class="name">Hey there! 👋 I'm Imad</h1>
-          <p class="tagline">Creative problem-solver who loves turning ideas into beautiful digital experiences</p>
+          <h1 class="name">{{ heroData.title }}</h1>
+          <p class="tagline">{{ heroData.copy }}</p>
           <div class="location">
             <span class="location-icon">📍</span>
-            <span>Huddersfield, UK 🇬🇧</span>
+            <span>{{ heroData.location }}</span>
           </div>
         </div>
       </div>
       
       <div class="personal-details">
-        <div class="detail-item">
-          <span class="label">✨ What I do</span>
-          <p class="value">I'm a designer, developer, and photographer who gets genuinely excited about creating things that people love to use. When I'm not coding or designing, you'll find me with a camera in hand or exploring the latest tech trends.</p>
-        </div>
-        
-        <div class="detail-item">
-          <span class="label">🎯 What drives me</span>
-          <p class="value">I believe great design isn't just about how things look—it's about solving real problems and making people's lives a little bit better. Every project is a chance to learn something new and push creative boundaries.</p>
-        </div>
-        
-        <div class="detail-item">
-          <span class="label">🚀 Currently</span>
-          <p class="value">Working on some exciting projects and always looking for the next creative challenge. Love collaborating with passionate people who share my enthusiasm for innovation!</p>
+        <div class="detail-item" v-for="(detail, key) in heroData.about" :key="key">
+          <span class="label">{{ detail.label }}</span>
+          <p class="value">{{ detail.value }}</p>
         </div>
       </div>
       
       <div class="contact-actions">
-        <button class="contact-btn primary" @click.stop="openContact">Let's chat! 💬</button>
-        <button class="contact-btn secondary" @click.stop="openWork">Check out my work ✨</button>
+        <button class="contact-btn primary" @click.stop="openContact">{{ heroData.ctaText }}</button>
+        <button class="contact-btn secondary" @click.stop="openWork">{{ heroData.ctaSecondaryText }}</button>
       </div>
     </div>
 
@@ -43,7 +33,7 @@
     <div class="contact-card__mobile">
       <!-- Mobile Header -->
       <div class="mobile-header">
-        <div class="mobile-header__title">Hey there! 👋</div>
+        <div class="mobile-header__title">{{ heroData.title }}</div>
       </div>
 
       <!-- Mobile Content (Scrollable) -->
@@ -51,38 +41,28 @@
         <!-- Mobile Profile -->
         <div class="mobile-profile">
           <div class="mobile-avatar">
-            <img src="/images/memoji.png" alt="Imad" />
+            <img :src="heroData.image.replace('../', '/')" :alt="heroData.title" />
           </div>
-          <h1 class="mobile-name">I'm Imad! 😊</h1>
-          <p class="mobile-tagline">Creative problem-solver who loves turning ideas into beautiful digital experiences</p>
+          <h1 class="mobile-name">{{ heroData.title }}</h1>
+          <p class="mobile-tagline">{{ heroData.copy }}</p>
           <div class="mobile-location">
             <span class="location-icon">📍</span>
-            <span>Huddersfield, UK 🇬🇧</span>
+            <span>{{ heroData.location }}</span>
           </div>
         </div>
 
         <!-- Mobile Details -->
         <div class="mobile-details">
-          <div class="mobile-detail-card">
-            <h3 class="mobile-detail-title">✨ What I do</h3>
-            <p class="mobile-detail-text">I'm a designer, developer, and photographer who gets genuinely excited about creating things that people love to use. When I'm not coding or designing, you'll find me with a camera in hand or exploring the latest tech trends.</p>
-          </div>
-          
-          <div class="mobile-detail-card">
-            <h3 class="mobile-detail-title">🎯 What drives me</h3>
-            <p class="mobile-detail-text">I believe great design isn't just about how things look—it's about solving real problems and making people's lives a little bit better. Every project is a chance to learn something new and push creative boundaries.</p>
-          </div>
-          
-          <div class="mobile-detail-card">
-            <h3 class="mobile-detail-title">🚀 Currently</h3>
-            <p class="mobile-detail-text">Working on some exciting projects and always looking for the next creative challenge. Love collaborating with passionate people who share my enthusiasm for innovation!</p>
+          <div class="mobile-detail-card" v-for="(detail, key) in heroData.about" :key="key">
+            <h3 class="mobile-detail-title">{{ detail.label }}</h3>
+            <p class="mobile-detail-text">{{ detail.value }}</p>
           </div>
         </div>
 
         <!-- Mobile Actions -->
         <div class="mobile-actions">
-          <button class="mobile-action-btn primary" @click.stop="openContact">Let's chat! 💬</button>
-          <button class="mobile-action-btn secondary" @click.stop="openWork">Check out my work ✨</button>
+          <button class="mobile-action-btn primary" @click.stop="openContact">{{ heroData.ctaText }}</button>
+          <button class="mobile-action-btn secondary" @click.stop="openWork">{{ heroData.ctaSecondaryText }}</button>
         </div>
       </div>
     </div>
@@ -90,6 +70,8 @@
 </template>
 
 <script setup>
+import heroData from '../../../data/hero.json'
+
 const emit = defineEmits(['openApp'])
 
 function openContact() {
@@ -347,7 +329,7 @@ function openWork() {
   overflow-y: auto;
   height: calc(100vh - 60px);
   padding: 0;
-  padding-bottom: 70px; // Extra space for dock and content
+  padding-bottom: 120px; // Extra space for dock and content
 }
 
 .mobile-actions {

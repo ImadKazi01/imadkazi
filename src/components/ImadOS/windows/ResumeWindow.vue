@@ -175,6 +175,6 @@ function printResume() {
   flex: 1;
   overflow: auto;
   padding: 20px;
-  padding-bottom: 60px; // Extra space for dock
+  padding-bottom: 120px; // Extra space for dock
 }
 </style>

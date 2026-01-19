@@ -217,7 +217,7 @@ const { onClose, onMinimize } = createTrafficLightHandlers(emit)
     height: calc(100vh - 40px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 60px; // Extra space for dock
+    padding-bottom: 100px; // Extra space for dock
   }
 }
 </style>

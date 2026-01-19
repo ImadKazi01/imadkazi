@@ -119,14 +119,26 @@
               <span class="resume-content__project-year">{{ project.year }}</span>
             </div>
             <p class="resume-content__project-description">{{ project.description }}</p>
-            <div class="resume-content__project-tech">
-              <span
-                v-for="tech in project.technologies"
-                :key="tech"
-                class="resume-content__tech-tag"
+            <div class="resume-content__project-footer">
+              <div class="resume-content__project-tech">
+                <span
+                  v-for="tech in project.technologies"
+                  :key="tech"
+                  class="resume-content__tech-tag"
+                >
+                  {{ tech }}
+                </span>
+              </div>
+              <a
+                v-if="project.url"
+                :href="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resume-content__project-button"
               >
-                {{ tech }}
-              </span>
+                View project
+                <ArrowTopRightOnSquareIcon class="resume-content__project-icon" />
+              </a>
             </div>
           </div>
         </div>
@@ -159,7 +171,9 @@
 </template>
 
 <script setup>
-const props = defineProps({
+import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
+
+defineProps({
   activeSection: { type: String, required: true },
   resumeData: { type: Object, required: true }
 })
@@ -394,10 +408,19 @@ const props = defineProps({
     margin: 0 0 12px 0;
   }
 
+  &__project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
   &__project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    flex: 1;
   }
 
   &__tech-tag {
@@ -406,6 +429,28 @@ const props = defineProps({
     padding: 4px 8px;
     border-radius: 12px;
     font-size: 11px;
+  }
+
+  &__project-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #fb923c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: #f97316;
+      text-decoration: underline;
+    }
+  }
+
+  &__project-icon {
+    width: 14px;
+    height: 14px;
   }
 
   &__contact-info {

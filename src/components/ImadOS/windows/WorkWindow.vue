@@ -381,6 +381,6 @@ function getCategoryCount(categoryId) {
   overflow: auto;
   padding: 20px;
   background: transparent;
-  padding-bottom: 80px; // Extra space for dock
+  padding-bottom: 120px; // Extra space for dock
 }
 </style>

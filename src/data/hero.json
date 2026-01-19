@@ -1,7 +1,23 @@
 {
   "title": "Hi, I'm Imad",
-  "copy": "A designer, developer & photographer based in Huddersfield. Specialising in front end development, branding and product & food photography!",
-  "ctaText": "Get in touch!",
+  "copy": "Designer, developer and photographer based in Huddersfield. I make things that look good and work well.",
+  "location": "Huddersfield, UK",
+  "ctaText": "Get in touch",
+  "ctaSecondaryText": "View my work",
   "ctaLink": "/contact",
-  "image": "../images/memoji.png"
+  "image": "../images/memoji.png",
+  "about": {
+    "whatIDo": {
+      "label": "What I do",
+      "value": "I'm a designer, developer, and photographer based in Huddersfield. I specialise in front-end development, branding, and product and food photography. When I'm not coding or designing, you'll usually find me out with my camera or having a play around with new tech."
+    },
+    "whatDrivesMe": {
+      "label": "What drives me",
+      "value": "My approach to design and development is simple: if something looks good and works well, people are more likely to use it. The easier a product is to use, the more people it can reach. Every project teaches me something new, and that's what keeps me motivated."
+    },
+    "currently": {
+      "label": "Currently",
+      "value": "Working in e-commerce during the day and rebuilding this portfolio in my spare time. I’ve been “nearly finished” with it for about five years and have redesigned it so many times I should probably start versioning it. Always keen to chat about new projects or opportunities."
+    }
+  }
 }

@@ -199,6 +199,6 @@ function getServiceIcon(iconName) {
   flex: 1;
   overflow: auto;
   background: transparent;
-  padding-bottom: 60px; // Extra space for dock
+  padding-bottom: 120px; // Extra space for dock
 }
 </style>
