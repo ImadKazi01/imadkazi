@@ -16,8 +16,14 @@ defineProps({
       <h1 class="hero__name">Imad Kazi</h1>
       <p class="hero__role">Designer, developer &amp; photographer</p>
       <div class="hero__meta">
-        <p>Based in {{ location }}</p>
-        <p>Currently {{ background }}</p>
+        <p>
+          <span class="hero__meta-label">Based in</span>
+          <span class="hero__meta-value">{{ location }}</span>
+        </p>
+        <p>
+          <span class="hero__meta-label">Currently</span>
+          <span class="hero__meta-value">{{ background }}</span>
+        </p>
       </div>
       <p class="hero__copy">{{ copy }}</p>
       <div class="hero__ctas">
@@ -81,7 +87,7 @@ defineProps({
   &__meta {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.35rem;
     margin-bottom: 1.5rem;
 
     @media (min-width: $tablet) {
@@ -89,10 +95,21 @@ defineProps({
     }
 
     p {
-      font-size: 0.9rem;
-      color: $text-secondary;
+      font-size: 0.95rem;
       margin: 0;
+      line-height: 1.5;
     }
+  }
+
+  &__meta-label {
+    font-weight: 500;
+    color: $orange;
+    margin-right: 0.35rem;
+  }
+
+  &__meta-value {
+    font-weight: 500;
+    color: $text-primary;
   }
 
   &__copy {
@@ -139,14 +156,14 @@ defineProps({
   }
 
   &__bento {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0.75rem;
-    align-items: stretch;
+    display: none;
 
     @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       gap: 1rem;
+      align-items: stretch;
       min-height: 18rem;
     }
   }
