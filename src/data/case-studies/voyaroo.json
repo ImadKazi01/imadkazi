@@ -1,0 +1,22 @@
+{
+  "id": "voyaroo",
+  "title": "Voyaroo",
+  "subtitle": "Mobile Travel Planning App",
+  "heroImage": "/images/case-studies/Voyaroo.jpg",
+  "desktopIcon": "/images/case-studies/Voyaroo.jpg",
+  "link": "https://voyaroo.up.railway.app",
+  "services": ["Web Design", "Web Development"],
+  "year": "2026",
+  "client": "Personal Project",
+  "overview": "Voyaroo is a mobile-first travel app that helps users plan trips with checklists, day-by-day itineraries, and outfit packing — all in one trip hub.",
+  "challenge": "Give travellers a single place to organise pre-trip tasks and daily plans on mobile, with secure per-user data and a fast, app-like experience.",
+  "solution": "Built a Next.js app with Auth.js credentials, PostgreSQL-backed trip data, tabbed itinerary and checklist flows, location autocomplete with hero imagery, and PWA support for on-the-go access.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "The build",
+      "content": "A mobile-first trip hub with account signup/login, per-user trip isolation, itinerary and checklist CRUD, outfit planning, Geoapify location autocomplete, Pexels hero images, and a PWA manifest — deployed on Railway with managed Postgres."
+    }
+  ],
+  "technologies": ["Next.js", "React", "TypeScript", "PostgreSQL", "Auth.js", "PWA"]
+}

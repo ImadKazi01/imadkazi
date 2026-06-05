@@ -2,8 +2,8 @@
   "id": "cleverbee",
   "title": "CleverBee Tuition",
   "subtitle": "Educational Platform & Brand Identity",
-  "heroImage": "https://picsum.photos/seed/cleverbee-hero/1200/600",
-  "desktopIcon": "https://picsum.photos/seed/cleverbee-icon/64/64",
+  "heroImage": "/images/case-studies/Cleverbee.png",
+  "desktopIcon": "/images/case-studies/Cleverbee.png",
   "link": "https://www.cleverbee.uk/",
   "services": ["Branding", "Web Design", "Web Development"],
   "year": "2024",
@@ -19,7 +19,7 @@
     },
     {
       "type": "image",
-      "src": "https://picsum.photos/seed/cleverbee-logo/800/400",
+      "src": "/images/case-studies/Cleverbee.png",
       "alt": "CleverBee Logo",
       "caption": "Logo design featuring friendly bee character and educational elements"
     },

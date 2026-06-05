@@ -1,0 +1,22 @@
+{
+  "id": "novaire",
+  "title": "Novaire",
+  "subtitle": "Luxury Chauffeur & Supercar Hire",
+  "heroImage": "/images/case-studies/Novaire.png",
+  "desktopIcon": "/images/case-studies/Novaire.png",
+  "link": "https://novaire.co.uk",
+  "services": ["Web Design", "Web Development"],
+  "year": "2026",
+  "client": "Novaire London PLC",
+  "overview": "Novaire is a luxury showcase site for chauffeured and self-drive supercar hire — weddings, galas, airport transfers, and film production — built with Nuxt 4 as a fast, SEO-ready marketing platform.",
+  "challenge": "Present a high-end fleet and service offering in a way that feels premium and trustworthy, while making it easy for clients to browse vehicles and request tailored quotes without friction.",
+  "solution": "Designed and built a static-first Nuxt site with a curated fleet catalogue, service-led storytelling, multi-step quote form with email delivery, and structured SEO across every page.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "The build",
+      "content": "A prerendered Nuxt 4 site with Tailwind-driven brand styling, optimised imagery via @nuxt/image, individual fleet pages with editorial galleries, a guided quote form backed by Resend/Formspree, JSON-LD for search, cookie-consent-aware analytics, and legal pages — deployed for production at novaire.co.uk."
+    }
+  ],
+  "technologies": ["Nuxt 4", "Vue 3", "Tailwind CSS", "TypeScript", "Resend", "Vitest"]
+}

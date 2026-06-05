@@ -2,7 +2,7 @@
   "name": "Imad Kazi",
   "title": "Web Developer",
   "location": "Huddersfield, UK",
-  "email": "imadkazi2013@gmail.com",
+  "email": "hello@imadkazi.co.uk",
   "phone": "07870876052",
   "website": "www.imadkazi.co.uk",
   "overview": "Committed professional offering more than 5 years of experience in web development. Excellent communication skills and a consistent team player in all sorts of environments. Experience working in both e-commerce and agency environments, delivering high-quality web solutions within agile, deadline-driven teams.",
@@ -10,7 +10,7 @@
     "location": "Huddersfield, UK",
     "experience": "5+ years",
     "specialization": "Frontend Development",
-    "status": "Prestige 5 Dev currently in the chambers of Handlebars fighting undefined variables"
+    "status": "Open to freelance projects and collaborations"
   },
   "experience": [
     {
@@ -91,31 +91,44 @@
     }
   ],
   "skills": {
-    "design": ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Adobe Premiere Pro", "Adobe After Effects", "Adobe Lightroom", "Figma"],
-    "development": ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Node.js", "GraphQL", "REST APIs", "jQuery", "LESS", "SASS", "Tailwind CSS", "TypeScript", "Liquid", "Handlebars", "TypeScript"],
-    "tools": ["Git", "Google Analytics", "Google Tag Manager", "Drupal", "Strapi", "BigCommerce", "Shopify", "Webflow", "Shogun", "Klevu"]
-  },
-  "projects": [
-    {
-      "name": "Cinema Library",
-      "description": "Developed a cinema library using React and APIs to allow users to find places to stream any film as part of a university assignment",
-      "technologies": ["React", "APIs"],
-      "year": "2022",
-      "url": "https://screenseek.netlify.app"
-    },
-    {
-      "name": "Mosque Management System",
-      "description": "Created a user-friendly web app and CMS for local mosques to display times and announcements on a TV as well as a mobile web app",
-      "technologies": ["Web App", "CMS", "Mobile Web App", "Vue.js", "Strapi"],
-      "year": "2025",
-      "url": "https://teflindley.netlify.app"
-    },
-    {
-      "name": "Mafia Mystery",
-      "description": "A digital version of the card game Mafia built with React and TypeScript. Features a game lobby with code sharing, night and day phases with voting mechanics, and WebSockets for real-time player connectivity.",
-      "technologies": ["React", "TypeScript", "Game Logic", "WebSocket"],
-      "year": "2025",
-      "url": "https://mafiamystery.netlify.app"
-    }
-  ]
+    "design": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Adobe Lightroom",
+      "Figma"
+    ],
+    "development": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Vue.js",
+      "Node.js",
+      "GraphQL",
+      "REST APIs",
+      "jQuery",
+      "LESS",
+      "SASS",
+      "Tailwind CSS",
+      "TypeScript",
+      "Liquid",
+      "Handlebars",
+      "TypeScript"
+    ],
+    "tools": [
+      "Git",
+      "Google Analytics",
+      "Google Tag Manager",
+      "Drupal",
+      "Strapi",
+      "BigCommerce",
+      "Shopify",
+      "Webflow",
+      "Shogun",
+      "Klevu"
+    ]
+  }
 }

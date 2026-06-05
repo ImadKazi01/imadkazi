@@ -1,0 +1,46 @@
+{
+  "id": "masjidly",
+  "title": "Masjidly",
+  "subtitle": "Prayer Time Display & Announcements",
+  "heroImage": "/images/case-studies/Masjidly.png",
+  "desktopIcon": "/images/case-studies/Masjidly.png",
+  "link": "https://masjidly.co.uk",
+  "services": ["Web Design", "Web Development"],
+  "year": "2025",
+  "client": "Personal Project",
+  "overview": "Masjidly is a purpose-built prayer time display and announcement system for masajid — a Vue.js display app backed by a Strapi CMS so committee members can manage timetables, event posters, and branding from any browser, with content syncing to TV screens and mobile.",
+  "challenge": "Most masajid run on volunteer committees without IT support. They needed a reliable way to show accurate salah times and rotating event announcements on wall-mounted TVs — without PowerPoint slides, USB drives, or someone on call to fix the screen.",
+  "solution": "Built a Vue 3 display renderer with a 40/60 TV-optimised layout, a Strapi v5 headless CMS for non-technical admins, and flexible deployment options — cloud-hosted, self-hosted via Docker, or a plug-and-play player device — so each masjid can run the system the way that fits them.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "The display",
+      "content": "The front-end is a single-page Vue 3 app designed for wall-mounted TVs: prayer times on the left, rotating announcement posters on the right. The layout highlights the next salah throughout the day, supports Jummah rows, and stays readable from across a large prayer hall."
+    },
+    {
+      "type": "text",
+      "title": "CMS & content pipeline",
+      "content": "Admins upload yearly timetables as CSV or JSON, publish event posters with expiry dates, and configure masjid branding — logo, name, and theme colour — through a straightforward Strapi dashboard. Announcements auto-expire via scheduled jobs, so outdated notices never linger on screen."
+    },
+    {
+      "type": "text",
+      "title": "Deployment options",
+      "content": "Masjidly ships three ways: cloud-hosted on Railway and Netlify for fully managed operation, self-hosted via Docker for offline-first local networks, or a preconfigured Player device that plugs into a TV and goes live in minutes. Each path shares the same CMS and display experience."
+    },
+    {
+      "type": "text",
+      "title": "Marketing site",
+      "content": "A separate Vue 3 + Vite marketing SPA explains features, deployment tiers, and pricing to masjid committees, with onboarding enquiries handled through Netlify serverless functions and email delivery."
+    }
+  ],
+  "technologies": [
+    "Vue 3",
+    "Vite",
+    "Strapi v5",
+    "PostgreSQL",
+    "Docker",
+    "Railway",
+    "Netlify",
+    "REST APIs"
+  ]
+}

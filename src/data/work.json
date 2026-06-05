@@ -1,59 +1,10 @@
 [
-  {
-    "title": "Burgerize",
-    "desc": "Full Design including, stickers, signs and packaging. Web design and setup of square website and photography for menu, website and social media.",
-    "img": "https://picsum.photos/seed/burgerize/600/300",
-    "link": "https://www.burgerizeonline.com/",
-    "services": ["Branding", "Web Design", "Photography"],
-    "path": "/work/burgerize",
-    "component": "CaseStudyView",
-    "meta": {
-      "title": "Burgerize"
-    }
-  },
-  {
-    "title": "CleverBee Tuition",
-    "desc": "Full brand identity including logo, logo mark typography, colour palette, print materia. Web development using webflow integrating various 3rd party plugins for calnedar, 1-to-1 booking and chat service.",
-    "img": "https://picsum.photos/seed/cleverbee/600/300",
-    "link": "https://www.cleverbee.org.uk/",
-    "services": ["Branding", "Web Design", "Web Development"],
-    "path": "/work/cleverbee",
-    "component": "CaseStudyView",
-    "meta": {
-      "title": "CleverBee Tuition"
-    }
-  },
-  {
-    "title": "The Little Green Van",
-    "desc": "Full Design including logo, logo mark, typography, colour palette, print material and packaging. Web design and development using webflow.",
-    "img": "https://picsum.photos/seed/littlegreen/600/300",
-    "link": "https://www.thelittlegreenvan.co.uk/",
-    "services": ["Branding", "Web Design", "Web Development"],
-    "path": "/work/little-green-van",
-    "component": "CaseStudyView",
-    "meta": {
-      "title": "The Little Green Van"
-    }
-  },
-  {
-    "title": "Dolce Juices",
-    "desc": "Full Design including logo, logo mark, typography, colour palette, print material and packaging.",
-    "img": "https://picsum.photos/seed/dolce/600/300",
-    "link": "https://www.dolcejuices.co.uk/",
-    "services": ["Branding"],
-    "path": "/work/dolce-juices",
-    "component": "CaseStudyView",
-    "meta": {
-      "title": "Dolce Juices"
-    }
-  },
-  {
-    "title": "Lunara Skincare",
-    "desc": "Full Design including logo, logo mark, typography, colour palette, print material and packaging.",
-    "img": "../images/case-studies/lunara/Lunara.webp",
-    "link": "https://www.lunara.co.uk/",
-    "services": ["Branding"],
-    "path": "/work/lunara",
-    "component": "CaseStudyView"
-  }
+  "novaire",
+  "masjidly",
+  "screenseek",
+  "cleverbee",
+  "mafia-mystery",
+  "lunara",
+  "burgerize",
+  "voyaroo"
 ]

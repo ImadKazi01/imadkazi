@@ -4,12 +4,10 @@
   "location": "Huddersfield, UK",
   "ctaText": "Get in touch",
   "ctaSecondaryText": "View my work",
-  "ctaLink": "/contact",
-  "image": "../images/memoji.png",
   "about": {
     "whatIDo": {
       "label": "What I do",
-      "value": "I'm a designer, developer, and photographer based in Huddersfield. I specialise in front-end development, branding, and product and food photography. When I'm not coding or designing, you'll usually find me out with my camera or having a play around with new tech."
+      "value": "I specialise in front-end development, branding, and product and food photography. When I'm not coding or designing, you'll usually find me out with my camera or having a play around with new tech."
     },
     "whatDrivesMe": {
       "label": "What drives me",
@@ -17,7 +15,7 @@
     },
     "currently": {
       "label": "Currently",
-      "value": "Working in e-commerce during the day and rebuilding this portfolio in my spare time. I’ve been “nearly finished” with it for about five years and have redesigned it so many times I should probably start versioning it. Always keen to chat about new projects or opportunities."
+      "value": "Web Developer at Richer Sounds, building e-commerce frontend by day. Always keen to chat about new projects or opportunities."
     }
   }
 }

@@ -1,35 +1,43 @@
 @import './resources.scss';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
 body {
-  background-color: $black;
+  margin: 0;
+  background-color: $page-bg;
+  font-family: $font-family;
+  color: $text-primary;
+  -webkit-font-smoothing: antialiased;
 }
 
 #app {
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  display: block;
 }
 
-body {
-  display: flex;
-  font-family: $font-family;
-  color: $white;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: none;
 }
 
-#app {
-  display: flex;
-  max-width: 1240px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  @media (min-width: $desktopSmall) {
-    max-width: 1350px;
-    gap: 2rem;
-    padding: 0 2rem;
-  }
-
-  @media (min-width: $desktop) {
-    max-width: 1440px;
-  }
+p {
+  margin-bottom: 0;
 }

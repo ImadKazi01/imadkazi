@@ -1,0 +1,48 @@
+{
+  "id": "screenseek",
+  "title": "ScreenSeek",
+  "subtitle": "Film Streaming Finder",
+  "heroImage": "/images/case-studies/ScreenSeek.png",
+  "desktopIcon": "/images/case-studies/ScreenSeek.png",
+  "link": "https://screenseek.netlify.app",
+  "services": ["Web Design", "Web Development"],
+  "year": "2022",
+  "client": "University Project",
+  "overview": "ScreenSeek is a film discovery and streaming finder built with React and the TMDB API. Users can browse trending and top-rated films, search titles with live suggestions, and see where each movie is available to stream, rent, or buy — all in a glassmorphic, Apple-inspired interface.",
+  "challenge": "Streaming availability is scattered across Netflix, Prime, Disney+, and dozens of other services. Users often waste time jumping between apps and search engines just to find out where a film is available.",
+  "solution": "Built a React front end with a centralized TMDB service layer, custom data hooks, and Context API state management. The app surfaces watch providers by region, rich film detail pages with cast and trailers, and personal watchlists and favourites persisted in local storage.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "The build",
+      "content": "A searchable film library powered by the TMDB REST API, with dedicated pages for trending, popular, top-rated, and upcoming releases. Listing pages use infinite scroll, while the home page features a hero spotlight with one-click access to streaming options."
+    },
+    {
+      "type": "text",
+      "title": "Where to watch",
+      "content": "The core value of ScreenSeek is surfacing streaming availability. Each film page shows providers grouped by stream, rent, and buy — with platform logos and links — so users can go from search to watching in seconds instead of tab-hopping."
+    },
+    {
+      "type": "text",
+      "title": "Design & experience",
+      "content": "The UI uses a dark, glassmorphic aesthetic built with Tailwind CSS and SCSS. Swiper carousels, skeleton loading states, responsive breakpoints, and smooth transitions give the app a polished, production-ready feel on mobile and desktop."
+    },
+    {
+      "type": "text",
+      "title": "Personal collections",
+      "content": "Users can save films to a watchlist or mark favourites, with both lists persisted via local storage. Combined with cast profile pages, trailer modals, and film recommendations, ScreenSeek works as both a streaming finder and a personal movie library."
+    }
+  ],
+  "technologies": [
+    "React",
+    "React Router",
+    "REST APIs",
+    "TMDB API",
+    "Tailwind CSS",
+    "SCSS",
+    "JavaScript",
+    "Context API",
+    "Swiper",
+    "Netlify"
+  ]
+}

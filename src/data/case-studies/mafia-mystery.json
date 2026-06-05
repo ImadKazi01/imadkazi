@@ -1,0 +1,22 @@
+{
+  "id": "mafia-mystery",
+  "title": "Mafia Mystery",
+  "subtitle": "Digital Card Game",
+  "heroImage": "/images/case-studies/Mafia.png",
+  "desktopIcon": "/images/case-studies/Mafia.png",
+  "link": "https://mafiamystery.netlify.app",
+  "services": ["Web Design", "Web Development"],
+  "year": "2025",
+  "client": "Personal Project",
+  "overview": "A digital version of the card game Mafia built with React and TypeScript, with real-time multiplayer via WebSockets.",
+  "challenge": "Translate the social deduction mechanics of Mafia into an online experience with lobbies, phases, and live player interaction.",
+  "solution": "Implemented game lobbies with shareable codes, night and day phases with voting, and WebSocket connectivity for real-time play.",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Gameplay",
+      "content": "Players join via lobby codes, move through night and day rounds, and vote in real time — all synced across connected clients."
+    }
+  ],
+  "technologies": ["React", "TypeScript", "WebSocket", "Game Logic"]
+}

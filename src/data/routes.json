@@ -1,45 +1,10 @@
 [
   {
-    "title": "ImadOS",
-    "component": "ImadOS",
-    "path": "/"
-  },
-  {
-    "title": "Home (Classic)",
-    "component": "HomeView",
-    "path": "/classic"
-  },
-  {
-    "title": "Work",
-    "component": "WorkView",
-    "path": "/work",
+    "title": "Home",
+    "component": "PortfolioView",
+    "path": "/",
     "meta": {
-      "title": "Work",
-      "link": "/work",
-      "description": "This is the work page",
-      "keywords": ["work", "portfolio", "projects", "clients"]
-    }
-  },
-  {
-    "title": "About",
-    "component": "AboutView",
-    "path": "/about",
-    "meta": {
-      "title": "About",
-      "link": "/about",
-      "description": "This is the about page",
-      "keywords": ["about", "me", "bio", "information"]
-    }
-  },
-  {
-    "title": "Contact",
-    "component": "ContactView",
-    "path": "/contact",
-    "meta": {
-      "title": "Contact",
-      "link": "/contact",
-      "description": "This is the contact page",
-      "keywords": ["contact", "email", "phone", "address"]
+      "title": "Designer • Developer • Photographer"
     }
   }
 ]
